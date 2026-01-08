@@ -1,0 +1,134 @@
+{
+  "@@locale": "fr",
+
+  "appTitle": "Ndmr",
+
+  "navDashboard": "Accueil",
+  "navChannels": "Canaux",
+  "navZones": "Zones",
+  "navContacts": "Contacts",
+  "navSettings": "Réglages",
+
+  "welcomeTitle": "Bienvenue sur Ndmr",
+  "welcomeSubtitle": "Créez ou ouvrez une configuration pour commencer",
+  "newConfig": "Nouvelle configuration",
+  "openFile": "Ouvrir un fichier",
+  "saveFile": "Enregistrer",
+
+  "configName": "Nouvelle configuration",
+
+  "channels": "Canaux",
+  "channelsEmpty": "Aucun canal",
+  "channelsEmptyHint": "Ajoutez votre premier canal pour commencer",
+  "addChannel": "Ajouter un canal",
+  "editChannel": "Modifier le canal",
+  "deleteChannel": "Supprimer le canal",
+  "deleteChannelConfirm": "Supprimer \"{name}\" ?",
+  "@deleteChannelConfirm": {
+    "placeholders": {
+      "name": {"type": "String"}
+    }
+  },
+
+  "zones": "Zones",
+  "zonesEmpty": "Aucune zone",
+  "zonesEmptyHint": "Les zones permettent d'organiser vos canaux",
+  "addZone": "Ajouter une zone",
+  "editZone": "Modifier la zone",
+  "deleteZone": "Supprimer la zone",
+  "zoneChannelCount": "{count} canaux",
+  "@zoneChannelCount": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+
+  "contacts": "Contacts",
+  "contactsEmpty": "Aucun contact",
+  "contactsEmptyHint": "Ajoutez des groupes de discussion et contacts privés",
+  "addContact": "Ajouter un contact",
+  "editContact": "Modifier le contact",
+  "deleteContact": "Supprimer le contact",
+
+  "settings": "Réglages",
+  "settingsIdentity": "Identité",
+  "settingsDisplay": "Affichage",
+  "settingsSaved": "Réglages enregistrés",
+
+  "fieldName": "Nom",
+  "fieldRxFrequency": "Fréquence RX (MHz)",
+  "fieldTxFrequency": "Fréquence TX (MHz)",
+  "fieldMode": "Mode",
+  "fieldPower": "Puissance",
+  "fieldTimeslot": "Timeslot",
+  "fieldColorCode": "Color Code",
+  "fieldDmrId": "DMR ID",
+  "fieldCallsign": "Indicatif",
+  "fieldIntroLine1": "Ligne d'intro 1",
+  "fieldIntroLine2": "Ligne d'intro 2",
+  "fieldCallType": "Type d'appel",
+
+  "modeAnalog": "ANALOGIQUE",
+  "modeDigital": "NUMÉRIQUE",
+
+  "powerLow": "FAIBLE",
+  "powerMedium": "MOYEN",
+  "powerHigh": "ÉLEVÉ",
+  "powerTurbo": "TURBO",
+
+  "callTypeGroup": "GROUPE",
+  "callTypePrivate": "PRIVÉ",
+  "callTypeAllCall": "APPEL GÉNÉRAL",
+
+  "cancel": "Annuler",
+  "save": "Enregistrer",
+  "delete": "Supprimer",
+
+  "nameRequired": "Le nom est requis",
+  "fieldRequired": "Requis",
+  "invalidNumber": "Nombre invalide",
+  "outOfRange": "Hors limites",
+
+  "noConfigLoaded": "Aucune configuration chargée",
+  "noConfigToSave": "Aucune configuration à enregistrer",
+  "configLoaded": "Configuration \"{name}\" chargée",
+  "@configLoaded": {
+    "placeholders": {
+      "name": {"type": "String"}
+    }
+  },
+  "configSaved": "Configuration enregistrée",
+
+  "helpChannel": "Un canal est une fréquence pré-enregistrée, comme une station de radio favorite. Il contient tous les paramètres nécessaires pour communiquer.",
+  "helpZone": "Une zone est un dossier pour organiser vos canaux. Par exemple : 'Relais locaux', 'Hotspot maison', 'Simplex'.",
+  "helpContact": "Un contact est un groupe de discussion (Talk Group) ou une personne. C'est comme un salon Discord ou un numéro de téléphone.",
+  "helpTimeslot": "Le DMR divise chaque fréquence en 2 créneaux temporels (TS1 et TS2). Chaque relais utilise un timeslot spécifique pour chaque talk group.",
+  "helpColorCode": "Le Color Code (0-15) est comme un code d'accès au relais. Vous devez utiliser le même que celui configuré sur le relais.",
+  "helpDmrId": "Votre DMR ID est un identifiant unique à 7 chiffres. Obtenez-le gratuitement sur radioid.net avec votre licence radioamateur.",
+  "helpCallsign": "Votre indicatif radioamateur officiel (ex: F1TMV).",
+  "helpRxFrequency": "Fréquence de réception : celle sur laquelle vous écoutez.",
+  "helpTxFrequency": "Fréquence d'émission : celle sur laquelle vous transmettez. Souvent différente sur les relais.",
+  "helpPower": "Puissance d'émission. Utilisez la puissance minimale nécessaire pour économiser la batterie.",
+  "helpTalkGroup": "Un Talk Group est un groupe de discussion. Le TG 208 regroupe tous les radioamateurs français, le TG 9 est local au relais.",
+
+  "searchChannelsHint": "Rechercher par nom ou fréquence...",
+  "noResults": "Aucun résultat",
+  "clearFilters": "Effacer les filtres",
+  "unnamed": "(sans nom)",
+
+  "wizardTitle": "Bienvenue sur Ndmr",
+  "wizardWelcomeTitle": "Configurez votre radio DMR",
+  "wizardWelcomeText": "Ndmr vous permet de programmer facilement votre radio DMR.\n\nCe guide va vous aider à configurer les informations de base.",
+  "wizardIdentityTitle": "Votre identité",
+  "wizardIdentityText": "Ces informations vous identifient sur le réseau DMR mondial.",
+  "wizardDmrIdHint": "Obtenez votre DMR ID gratuitement sur radioid.net",
+  "wizardRadioTitle": "Votre radio",
+  "wizardRadioText": "Sélectionnez le modèle de votre radio pour optimiser la configuration.",
+  "wizardFinishTitle": "C'est prêt !",
+  "wizardFinishText": "Votre configuration est créée. Vous pouvez maintenant ajouter des canaux, zones et contacts.",
+  "wizardAddDefaultContacts": "Ajouter les contacts par défaut (France, Europe, etc.)",
+  "wizardNext": "Suivant",
+  "wizardBack": "Retour",
+  "wizardFinish": "Terminer",
+  "wizardSkip": "Passer"
+}
