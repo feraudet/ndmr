@@ -112,6 +112,7 @@
   "helpTalkGroup": "Un Talk Group est un groupe de discussion. Le TG 208 regroupe tous les radioamateurs français, le TG 9 est local au relais.",
 
   "searchChannelsHint": "Rechercher par nom ou fréquence...",
+  "searchContactsHint": "Rechercher par nom ou DMR ID...",
   "noResults": "Aucun résultat",
   "clearFilters": "Effacer les filtres",
   "unnamed": "(sans nom)",
@@ -173,5 +174,14 @@
     "placeholders": {
       "count": {"type": "int"}
     }
-  }
+  },
+
+  "importQdmr": "Importer qdmr (.yaml)",
+  "importQdmrSuccess": "Codeplug importé : {name}",
+  "@importQdmrSuccess": {
+    "placeholders": {
+      "name": {"type": "String"}
+    }
+  },
+  "importQdmrError": "Erreur lors de l'import du fichier qdmr"
 }

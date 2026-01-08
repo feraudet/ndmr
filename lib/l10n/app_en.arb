@@ -97,6 +97,7 @@
   "helpTalkGroup": "A Talk Group is a discussion group. TG 91 connects worldwide, TG 9 is local to the repeater.",
 
   "searchChannelsHint": "Search by name or frequency...",
+  "searchContactsHint": "Search by name or DMR ID...",
   "noResults": "No results",
   "clearFilters": "Clear filters",
   "unnamed": "(unnamed)",
@@ -158,5 +159,14 @@
     "placeholders": {
       "count": {"type": "int"}
     }
-  }
+  },
+
+  "importQdmr": "Import qdmr (.yaml)",
+  "importQdmrSuccess": "Codeplug imported: {name}",
+  "@importQdmrSuccess": {
+    "placeholders": {
+      "name": {"type": "String"}
+    }
+  },
+  "importQdmrError": "Error importing qdmr file"
 }

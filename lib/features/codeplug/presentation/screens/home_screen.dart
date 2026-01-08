@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../../l10n/app_localizations.dart';
@@ -233,7 +234,38 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
     final isWide = width >= 800;
     final isExtraWide = width >= 1200;
 
-    return Scaffold(
+    return CallbackShortcuts(
+      bindings: <ShortcutActivator, VoidCallback>{
+        // File operations
+        const SingleActivator(LogicalKeyboardKey.keyO, meta: true): _openFile,
+        const SingleActivator(LogicalKeyboardKey.keyO, control: true): _openFile,
+        const SingleActivator(LogicalKeyboardKey.keyS, meta: true): _saveFile,
+        const SingleActivator(LogicalKeyboardKey.keyS, control: true): _saveFile,
+        // Navigation shortcuts (Cmd/Ctrl + 1-5)
+        const SingleActivator(LogicalKeyboardKey.digit1, meta: true): () =>
+            setState(() => _selectedIndex = 0),
+        const SingleActivator(LogicalKeyboardKey.digit1, control: true): () =>
+            setState(() => _selectedIndex = 0),
+        const SingleActivator(LogicalKeyboardKey.digit2, meta: true): () =>
+            setState(() => _selectedIndex = 1),
+        const SingleActivator(LogicalKeyboardKey.digit2, control: true): () =>
+            setState(() => _selectedIndex = 1),
+        const SingleActivator(LogicalKeyboardKey.digit3, meta: true): () =>
+            setState(() => _selectedIndex = 2),
+        const SingleActivator(LogicalKeyboardKey.digit3, control: true): () =>
+            setState(() => _selectedIndex = 2),
+        const SingleActivator(LogicalKeyboardKey.digit4, meta: true): () =>
+            setState(() => _selectedIndex = 3),
+        const SingleActivator(LogicalKeyboardKey.digit4, control: true): () =>
+            setState(() => _selectedIndex = 3),
+        const SingleActivator(LogicalKeyboardKey.digit5, meta: true): () =>
+            setState(() => _selectedIndex = 4),
+        const SingleActivator(LogicalKeyboardKey.digit5, control: true): () =>
+            setState(() => _selectedIndex = 4),
+      },
+      child: Focus(
+        autofocus: true,
+        child: Scaffold(
       appBar: AppBar(
         title: Text(l10n.appTitle),
         actions: [
@@ -278,6 +310,8 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
               },
               destinations: _buildDestinations(l10n),
             ),
+        ),
+      ),
     );
   }
 }

@@ -265,6 +265,9 @@ class L10nEn extends L10n {
   String get searchChannelsHint => 'Search by name or frequency...';
 
   @override
+  String get searchContactsHint => 'Search by name or DMR ID...';
+
+  @override
   String get noResults => 'No results';
 
   @override
@@ -390,4 +393,15 @@ class L10nEn extends L10n {
   String validationInfos(int count) {
     return '$count info(s)';
   }
+
+  @override
+  String get importQdmr => 'Import qdmr (.yaml)';
+
+  @override
+  String importQdmrSuccess(String name) {
+    return 'Codeplug imported: $name';
+  }
+
+  @override
+  String get importQdmrError => 'Error importing qdmr file';
 }

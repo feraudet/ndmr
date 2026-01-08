@@ -37,6 +37,9 @@ dependencies:
   # CSV import/export
   csv: ^6.0.0
 
+  # YAML parsing for qdmr import
+  yaml: ^3.1.0
+
   # Responsive layout
   flutter_adaptive_scaffold: ^0.3.2
 

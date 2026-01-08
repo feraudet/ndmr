@@ -577,6 +577,12 @@ abstract class L10n {
   /// **'Rechercher par nom ou fréquence...'**
   String get searchChannelsHint;
 
+  /// No description provided for @searchContactsHint.
+  ///
+  /// In fr, this message translates to:
+  /// **'Rechercher par nom ou DMR ID...'**
+  String get searchContactsHint;
+
   /// No description provided for @noResults.
   ///
   /// In fr, this message translates to:
@@ -804,6 +810,24 @@ abstract class L10n {
   /// In fr, this message translates to:
   /// **'{count} information(s)'**
   String validationInfos(int count);
+
+  /// No description provided for @importQdmr.
+  ///
+  /// In fr, this message translates to:
+  /// **'Importer qdmr (.yaml)'**
+  String get importQdmr;
+
+  /// No description provided for @importQdmrSuccess.
+  ///
+  /// In fr, this message translates to:
+  /// **'Codeplug importé : {name}'**
+  String importQdmrSuccess(String name);
+
+  /// No description provided for @importQdmrError.
+  ///
+  /// In fr, this message translates to:
+  /// **'Erreur lors de l\'import du fichier qdmr'**
+  String get importQdmrError;
 }
 
 class _L10nDelegate extends LocalizationsDelegate<L10n> {

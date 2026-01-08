@@ -4,11 +4,34 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../../l10n/app_localizations.dart';
 import '../../../../shared/widgets/help_tooltip.dart';
 import '../../data/repositories/codeplug_repository.dart';
+import '../../data/services/qdmr_import_service.dart';
 import '../providers/codeplug_provider.dart';
 import '../widgets/setup_wizard.dart';
 
 class DashboardScreen extends ConsumerWidget {
   const DashboardScreen({super.key});
+
+  Future<void> _importQdmr(
+    BuildContext context,
+    WidgetRef ref,
+    L10n l10n,
+  ) async {
+    final service = QdmrImportService();
+    final codeplug = await service.importFromFile();
+
+    if (!context.mounted) return;
+
+    if (codeplug != null) {
+      ref.read(codeplugNotifierProvider.notifier).load(codeplug);
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text(l10n.importQdmrSuccess(codeplug.name))),
+      );
+    } else {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text(l10n.importQdmrError)),
+      );
+    }
+  }
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -38,8 +61,10 @@ class DashboardScreen extends ConsumerWidget {
                   ),
             ),
             const SizedBox(height: 32),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
+            Wrap(
+              alignment: WrapAlignment.center,
+              spacing: 16,
+              runSpacing: 12,
               children: [
                 FilledButton.icon(
                   onPressed: () {
@@ -54,7 +79,6 @@ class DashboardScreen extends ConsumerWidget {
                   icon: const Icon(Icons.add),
                   label: Text(l10n.newConfig),
                 ),
-                const SizedBox(width: 16),
                 OutlinedButton.icon(
                   onPressed: () async {
                     final repo = ref.read(codeplugRepositoryProvider);
@@ -65,6 +89,11 @@ class DashboardScreen extends ConsumerWidget {
                   },
                   icon: const Icon(Icons.folder_open),
                   label: Text(l10n.openFile),
+                ),
+                OutlinedButton.icon(
+                  onPressed: () => _importQdmr(context, ref, l10n),
+                  icon: const Icon(Icons.upload_file),
+                  label: Text(l10n.importQdmr),
                 ),
               ],
             ),
