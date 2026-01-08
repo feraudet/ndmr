@@ -322,4 +322,72 @@ class L10nEn extends L10n {
 
   @override
   String get wizardSkip => 'Skip';
+
+  @override
+  String get importCsv => 'Import CSV';
+
+  @override
+  String get exportCsv => 'Export CSV';
+
+  @override
+  String importSuccess(int count) {
+    return '$count channels imported';
+  }
+
+  @override
+  String get exportSuccess => 'Export successful';
+
+  @override
+  String get importError => 'Import error';
+
+  @override
+  String get noChannelsToExport => 'No channels to export';
+
+  @override
+  String get zoneChannels => 'Zone channels';
+
+  @override
+  String get availableChannels => 'Available channels';
+
+  @override
+  String get addToZone => 'Add to zone';
+
+  @override
+  String get removeFromZone => 'Remove from zone';
+
+  @override
+  String get noChannelsInZone => 'No channels in this zone';
+
+  @override
+  String get dragChannelsHint => 'Drag channels here or use the + button';
+
+  @override
+  String get manageChannels => 'Manage channels';
+
+  @override
+  String get validate => 'Validate';
+
+  @override
+  String get validationTitle => 'Codeplug validation';
+
+  @override
+  String get validationPassed => 'Validation passed';
+
+  @override
+  String get validationPassedHint => 'No issues detected';
+
+  @override
+  String validationErrors(int count) {
+    return '$count error(s)';
+  }
+
+  @override
+  String validationWarnings(int count) {
+    return '$count warning(s)';
+  }
+
+  @override
+  String validationInfos(int count) {
+    return '$count info(s)';
+  }
 }

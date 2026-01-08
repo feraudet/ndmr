@@ -130,5 +130,48 @@
   "wizardNext": "Suivant",
   "wizardBack": "Retour",
   "wizardFinish": "Terminer",
-  "wizardSkip": "Passer"
+  "wizardSkip": "Passer",
+
+  "importCsv": "Importer CSV",
+  "exportCsv": "Exporter CSV",
+  "importSuccess": "{count} canaux importés",
+  "@importSuccess": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+  "exportSuccess": "Export réussi",
+  "importError": "Erreur lors de l'import",
+  "noChannelsToExport": "Aucun canal à exporter",
+
+  "zoneChannels": "Canaux de la zone",
+  "availableChannels": "Canaux disponibles",
+  "addToZone": "Ajouter à la zone",
+  "removeFromZone": "Retirer de la zone",
+  "noChannelsInZone": "Aucun canal dans cette zone",
+  "dragChannelsHint": "Glissez des canaux ici ou utilisez le bouton +",
+  "manageChannels": "Gérer les canaux",
+
+  "validate": "Valider",
+  "validationTitle": "Validation du codeplug",
+  "validationPassed": "Validation réussie",
+  "validationPassedHint": "Aucun problème détecté",
+  "validationErrors": "{count} erreur(s)",
+  "@validationErrors": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+  "validationWarnings": "{count} avertissement(s)",
+  "@validationWarnings": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+  "validationInfos": "{count} information(s)",
+  "@validationInfos": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  }
 }

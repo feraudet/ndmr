@@ -115,5 +115,48 @@
   "wizardNext": "Next",
   "wizardBack": "Back",
   "wizardFinish": "Finish",
-  "wizardSkip": "Skip"
+  "wizardSkip": "Skip",
+
+  "importCsv": "Import CSV",
+  "exportCsv": "Export CSV",
+  "importSuccess": "{count} channels imported",
+  "@importSuccess": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+  "exportSuccess": "Export successful",
+  "importError": "Import error",
+  "noChannelsToExport": "No channels to export",
+
+  "zoneChannels": "Zone channels",
+  "availableChannels": "Available channels",
+  "addToZone": "Add to zone",
+  "removeFromZone": "Remove from zone",
+  "noChannelsInZone": "No channels in this zone",
+  "dragChannelsHint": "Drag channels here or use the + button",
+  "manageChannels": "Manage channels",
+
+  "validate": "Validate",
+  "validationTitle": "Codeplug validation",
+  "validationPassed": "Validation passed",
+  "validationPassedHint": "No issues detected",
+  "validationErrors": "{count} error(s)",
+  "@validationErrors": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+  "validationWarnings": "{count} warning(s)",
+  "@validationWarnings": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+  "validationInfos": "{count} info(s)",
+  "@validationInfos": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  }
 }

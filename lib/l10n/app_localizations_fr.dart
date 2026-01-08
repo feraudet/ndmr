@@ -326,4 +326,73 @@ class L10nFr extends L10n {
 
   @override
   String get wizardSkip => 'Passer';
+
+  @override
+  String get importCsv => 'Importer CSV';
+
+  @override
+  String get exportCsv => 'Exporter CSV';
+
+  @override
+  String importSuccess(int count) {
+    return '$count canaux importés';
+  }
+
+  @override
+  String get exportSuccess => 'Export réussi';
+
+  @override
+  String get importError => 'Erreur lors de l\'import';
+
+  @override
+  String get noChannelsToExport => 'Aucun canal à exporter';
+
+  @override
+  String get zoneChannels => 'Canaux de la zone';
+
+  @override
+  String get availableChannels => 'Canaux disponibles';
+
+  @override
+  String get addToZone => 'Ajouter à la zone';
+
+  @override
+  String get removeFromZone => 'Retirer de la zone';
+
+  @override
+  String get noChannelsInZone => 'Aucun canal dans cette zone';
+
+  @override
+  String get dragChannelsHint =>
+      'Glissez des canaux ici ou utilisez le bouton +';
+
+  @override
+  String get manageChannels => 'Gérer les canaux';
+
+  @override
+  String get validate => 'Valider';
+
+  @override
+  String get validationTitle => 'Validation du codeplug';
+
+  @override
+  String get validationPassed => 'Validation réussie';
+
+  @override
+  String get validationPassedHint => 'Aucun problème détecté';
+
+  @override
+  String validationErrors(int count) {
+    return '$count erreur(s)';
+  }
+
+  @override
+  String validationWarnings(int count) {
+    return '$count avertissement(s)';
+  }
+
+  @override
+  String validationInfos(int count) {
+    return '$count information(s)';
+  }
 }

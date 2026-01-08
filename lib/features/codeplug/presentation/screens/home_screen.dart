@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../../l10n/app_localizations.dart';
 import '../../data/repositories/codeplug_repository.dart';
+import '../../data/services/validation_service.dart';
 import '../providers/codeplug_provider.dart';
 import 'channels_screen.dart';
 import 'contacts_screen.dart';
@@ -126,6 +127,105 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
     };
   }
 
+  void _validateCodeplug(L10n l10n) {
+    final codeplug = ref.read(codeplugNotifierProvider);
+    if (codeplug == null) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text(l10n.noConfigLoaded)),
+      );
+      return;
+    }
+
+    final validationService = ValidationService();
+    final result = validationService.validate(codeplug);
+
+    showDialog<void>(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: Text(l10n.validationTitle),
+        content: SizedBox(
+          width: 400,
+          child: result.issues.isEmpty
+              ? Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Icon(
+                      Icons.check_circle,
+                      size: 64,
+                      color: Theme.of(context).colorScheme.primary,
+                    ),
+                    const SizedBox(height: 16),
+                    Text(
+                      l10n.validationPassed,
+                      style: Theme.of(context).textTheme.titleLarge,
+                    ),
+                    const SizedBox(height: 8),
+                    Text(l10n.validationPassedHint),
+                  ],
+                )
+              : Column(
+                  mainAxisSize: MainAxisSize.min,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    if (result.errorCount > 0)
+                      _ValidationSummaryChip(
+                        icon: Icons.error,
+                        color: Colors.red,
+                        label: l10n.validationErrors(result.errorCount),
+                      ),
+                    if (result.warningCount > 0)
+                      _ValidationSummaryChip(
+                        icon: Icons.warning,
+                        color: Colors.orange,
+                        label: l10n.validationWarnings(result.warningCount),
+                      ),
+                    if (result.infoCount > 0)
+                      _ValidationSummaryChip(
+                        icon: Icons.info,
+                        color: Colors.blue,
+                        label: l10n.validationInfos(result.infoCount),
+                      ),
+                    const SizedBox(height: 16),
+                    const Divider(),
+                    ConstrainedBox(
+                      constraints: const BoxConstraints(maxHeight: 300),
+                      child: ListView.builder(
+                        shrinkWrap: true,
+                        itemCount: result.issues.length,
+                        itemBuilder: (context, index) {
+                          final issue = result.issues[index];
+                          return ListTile(
+                            leading: Icon(
+                              issue.severity == ValidationSeverity.error
+                                  ? Icons.error
+                                  : issue.severity == ValidationSeverity.warning
+                                      ? Icons.warning
+                                      : Icons.info,
+                              color: issue.severity == ValidationSeverity.error
+                                  ? Colors.red
+                                  : issue.severity == ValidationSeverity.warning
+                                      ? Colors.orange
+                                      : Colors.blue,
+                            ),
+                            title: Text(issue.message),
+                            dense: true,
+                          );
+                        },
+                      ),
+                    ),
+                  ],
+                ),
+        ),
+        actions: [
+          FilledButton(
+            onPressed: () => Navigator.pop(context),
+            child: const Text('OK'),
+          ),
+        ],
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     final l10n = L10n.of(context)!;
@@ -137,6 +237,11 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
       appBar: AppBar(
         title: Text(l10n.appTitle),
         actions: [
+          IconButton(
+            icon: const Icon(Icons.check_circle_outline),
+            tooltip: l10n.validate,
+            onPressed: () => _validateCodeplug(l10n),
+          ),
           IconButton(
             icon: const Icon(Icons.file_open),
             tooltip: l10n.openFile,
@@ -175,4 +280,28 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
             ),
     );
   }
+}
+
+class _ValidationSummaryChip extends StatelessWidget {
+  const _ValidationSummaryChip({
+    required this.icon,
+    required this.color,
+    required this.label,
+  });
+
+  final IconData icon;
+  final Color color;
+  final String label;
+
+  @override
+  Widget build(BuildContext context) => Padding(
+        padding: const EdgeInsets.symmetric(vertical: 4),
+        child: Row(
+          children: [
+            Icon(icon, color: color, size: 20),
+            const SizedBox(width: 8),
+            Text(label),
+          ],
+        ),
+      );
 }

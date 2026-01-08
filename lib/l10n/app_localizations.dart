@@ -684,6 +684,126 @@ abstract class L10n {
   /// In fr, this message translates to:
   /// **'Passer'**
   String get wizardSkip;
+
+  /// No description provided for @importCsv.
+  ///
+  /// In fr, this message translates to:
+  /// **'Importer CSV'**
+  String get importCsv;
+
+  /// No description provided for @exportCsv.
+  ///
+  /// In fr, this message translates to:
+  /// **'Exporter CSV'**
+  String get exportCsv;
+
+  /// No description provided for @importSuccess.
+  ///
+  /// In fr, this message translates to:
+  /// **'{count} canaux importés'**
+  String importSuccess(int count);
+
+  /// No description provided for @exportSuccess.
+  ///
+  /// In fr, this message translates to:
+  /// **'Export réussi'**
+  String get exportSuccess;
+
+  /// No description provided for @importError.
+  ///
+  /// In fr, this message translates to:
+  /// **'Erreur lors de l\'import'**
+  String get importError;
+
+  /// No description provided for @noChannelsToExport.
+  ///
+  /// In fr, this message translates to:
+  /// **'Aucun canal à exporter'**
+  String get noChannelsToExport;
+
+  /// No description provided for @zoneChannels.
+  ///
+  /// In fr, this message translates to:
+  /// **'Canaux de la zone'**
+  String get zoneChannels;
+
+  /// No description provided for @availableChannels.
+  ///
+  /// In fr, this message translates to:
+  /// **'Canaux disponibles'**
+  String get availableChannels;
+
+  /// No description provided for @addToZone.
+  ///
+  /// In fr, this message translates to:
+  /// **'Ajouter à la zone'**
+  String get addToZone;
+
+  /// No description provided for @removeFromZone.
+  ///
+  /// In fr, this message translates to:
+  /// **'Retirer de la zone'**
+  String get removeFromZone;
+
+  /// No description provided for @noChannelsInZone.
+  ///
+  /// In fr, this message translates to:
+  /// **'Aucun canal dans cette zone'**
+  String get noChannelsInZone;
+
+  /// No description provided for @dragChannelsHint.
+  ///
+  /// In fr, this message translates to:
+  /// **'Glissez des canaux ici ou utilisez le bouton +'**
+  String get dragChannelsHint;
+
+  /// No description provided for @manageChannels.
+  ///
+  /// In fr, this message translates to:
+  /// **'Gérer les canaux'**
+  String get manageChannels;
+
+  /// No description provided for @validate.
+  ///
+  /// In fr, this message translates to:
+  /// **'Valider'**
+  String get validate;
+
+  /// No description provided for @validationTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Validation du codeplug'**
+  String get validationTitle;
+
+  /// No description provided for @validationPassed.
+  ///
+  /// In fr, this message translates to:
+  /// **'Validation réussie'**
+  String get validationPassed;
+
+  /// No description provided for @validationPassedHint.
+  ///
+  /// In fr, this message translates to:
+  /// **'Aucun problème détecté'**
+  String get validationPassedHint;
+
+  /// No description provided for @validationErrors.
+  ///
+  /// In fr, this message translates to:
+  /// **'{count} erreur(s)'**
+  String validationErrors(int count);
+
+  /// No description provided for @validationWarnings.
+  ///
+  /// In fr, this message translates to:
+  /// **'{count} avertissement(s)'**
+  String validationWarnings(int count);
+
+  /// No description provided for @validationInfos.
+  ///
+  /// In fr, this message translates to:
+  /// **'{count} information(s)'**
+  String validationInfos(int count);
 }
 
 class _L10nDelegate extends LocalizationsDelegate<L10n> {

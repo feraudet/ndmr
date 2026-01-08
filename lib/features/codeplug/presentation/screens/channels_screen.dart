@@ -5,6 +5,7 @@ import 'package:uuid/uuid.dart';
 import '../../../../l10n/app_localizations.dart';
 import '../../../../shared/widgets/help_tooltip.dart';
 import '../../data/models/models.dart';
+import '../../data/services/csv_service.dart';
 import '../providers/codeplug_provider.dart';
 import '../widgets/channel_form_dialog.dart';
 
@@ -19,6 +20,7 @@ class ChannelsScreen extends ConsumerStatefulWidget {
 
 class _ChannelsScreenState extends ConsumerState<ChannelsScreen> {
   final _searchController = TextEditingController();
+  final _csvService = CsvService();
   String _searchQuery = '';
   ChannelMode? _modeFilter;
 
@@ -108,6 +110,35 @@ class _ChannelsScreenState extends ConsumerState<ChannelsScreen> {
                       _modeFilter = selected ? ChannelMode.analog : null;
                     });
                   },
+                ),
+                const SizedBox(width: 8),
+                PopupMenuButton<String>(
+                  icon: const Icon(Icons.more_vert),
+                  onSelected: (value) {
+                    if (value == 'import') {
+                      _importCsv(l10n);
+                    } else if (value == 'export') {
+                      _exportCsv(l10n, allChannels);
+                    }
+                  },
+                  itemBuilder: (context) => [
+                    PopupMenuItem(
+                      value: 'import',
+                      child: ListTile(
+                        leading: const Icon(Icons.file_upload),
+                        title: Text(l10n.importCsv),
+                        contentPadding: EdgeInsets.zero,
+                      ),
+                    ),
+                    PopupMenuItem(
+                      value: 'export',
+                      child: ListTile(
+                        leading: const Icon(Icons.file_download),
+                        title: Text(l10n.exportCsv),
+                        contentPadding: EdgeInsets.zero,
+                      ),
+                    ),
+                  ],
                 ),
               ],
             ),
@@ -223,6 +254,45 @@ class _ChannelsScreenState extends ConsumerState<ChannelsScreen> {
 
     if (channel != null) {
       ref.read(codeplugNotifierProvider.notifier).addChannel(channel);
+    }
+  }
+
+  Future<void> _importCsv(L10n l10n) async {
+    final channels = await _csvService.importChannels();
+    if (!mounted) return;
+
+    if (channels == null || channels.isEmpty) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text(l10n.importError)),
+      );
+      return;
+    }
+
+    final notifier = ref.read(codeplugNotifierProvider.notifier);
+    for (final channel in channels) {
+      notifier.addChannel(channel);
+    }
+
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(content: Text(l10n.importSuccess(channels.length))),
+    );
+  }
+
+  Future<void> _exportCsv(L10n l10n, List<Channel> channels) async {
+    if (channels.isEmpty) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text(l10n.noChannelsToExport)),
+      );
+      return;
+    }
+
+    final success = await _csvService.exportChannels(channels);
+    if (!mounted) return;
+
+    if (success) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text(l10n.exportSuccess)),
+      );
     }
   }
 }
