@@ -7,9 +7,11 @@ import '../../data/repositories/codeplug_repository.dart';
 import '../../data/services/pdf_export_service.dart';
 import '../../data/services/validation_service.dart';
 import '../providers/codeplug_provider.dart';
+import '../providers/history_provider.dart';
 import 'channels_screen.dart';
 import 'contacts_screen.dart';
 import 'dashboard_screen.dart';
+import 'scan_lists_screen.dart';
 import 'settings_screen.dart';
 import 'zones_screen.dart';
 
@@ -45,6 +47,11 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
           label: l10n.navContacts,
         ),
         NavigationDestination(
+          icon: const Icon(Icons.playlist_play_outlined),
+          selectedIcon: const Icon(Icons.playlist_play),
+          label: l10n.navScanLists,
+        ),
+        NavigationDestination(
           icon: const Icon(Icons.settings_outlined),
           selectedIcon: const Icon(Icons.settings),
           label: l10n.navSettings,
@@ -71,6 +78,11 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
           icon: const Icon(Icons.contacts_outlined),
           selectedIcon: const Icon(Icons.contacts),
           label: Text(l10n.navContacts),
+        ),
+        NavigationRailDestination(
+          icon: const Icon(Icons.playlist_play_outlined),
+          selectedIcon: const Icon(Icons.playlist_play),
+          label: Text(l10n.navScanLists),
         ),
         NavigationRailDestination(
           icon: const Icon(Icons.settings_outlined),
@@ -138,7 +150,8 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
       1 => const ChannelsScreen(),
       2 => const ZonesScreen(),
       3 => const ContactsScreen(),
-      4 => const SettingsScreen(),
+      4 => const ScanListsScreen(),
+      5 => const SettingsScreen(),
       _ => const DashboardScreen(),
     };
   }
@@ -256,6 +269,19 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
         const SingleActivator(LogicalKeyboardKey.keyO, control: true): _openFile,
         const SingleActivator(LogicalKeyboardKey.keyS, meta: true): _saveFile,
         const SingleActivator(LogicalKeyboardKey.keyS, control: true): _saveFile,
+        // Undo/Redo
+        const SingleActivator(LogicalKeyboardKey.keyZ, meta: true): () =>
+            ref.read(historyNotifierProvider.notifier).undo(),
+        const SingleActivator(LogicalKeyboardKey.keyZ, control: true): () =>
+            ref.read(historyNotifierProvider.notifier).undo(),
+        const SingleActivator(LogicalKeyboardKey.keyZ, meta: true, shift: true): () =>
+            ref.read(historyNotifierProvider.notifier).redo(),
+        const SingleActivator(LogicalKeyboardKey.keyZ, control: true, shift: true): () =>
+            ref.read(historyNotifierProvider.notifier).redo(),
+        const SingleActivator(LogicalKeyboardKey.keyY, meta: true): () =>
+            ref.read(historyNotifierProvider.notifier).redo(),
+        const SingleActivator(LogicalKeyboardKey.keyY, control: true): () =>
+            ref.read(historyNotifierProvider.notifier).redo(),
         // Navigation shortcuts (Cmd/Ctrl + 1-5)
         const SingleActivator(LogicalKeyboardKey.digit1, meta: true): () =>
             setState(() => _selectedIndex = 0),
@@ -277,6 +303,10 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
             setState(() => _selectedIndex = 4),
         const SingleActivator(LogicalKeyboardKey.digit5, control: true): () =>
             setState(() => _selectedIndex = 4),
+        const SingleActivator(LogicalKeyboardKey.digit6, meta: true): () =>
+            setState(() => _selectedIndex = 5),
+        const SingleActivator(LogicalKeyboardKey.digit6, control: true): () =>
+            setState(() => _selectedIndex = 5),
       },
       child: Focus(
         autofocus: true,
@@ -284,6 +314,21 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
       appBar: AppBar(
         title: Text(l10n.appTitle),
         actions: [
+          IconButton(
+            icon: const Icon(Icons.undo),
+            tooltip: l10n.undo,
+            onPressed: ref.watch(canUndoProvider)
+                ? () => ref.read(historyNotifierProvider.notifier).undo()
+                : null,
+          ),
+          IconButton(
+            icon: const Icon(Icons.redo),
+            tooltip: l10n.redo,
+            onPressed: ref.watch(canRedoProvider)
+                ? () => ref.read(historyNotifierProvider.notifier).redo()
+                : null,
+          ),
+          const VerticalDivider(width: 16),
           IconButton(
             icon: const Icon(Icons.check_circle_outline),
             tooltip: l10n.validate,

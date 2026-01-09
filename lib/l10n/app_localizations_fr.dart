@@ -24,6 +24,9 @@ class L10nFr extends L10n {
   String get navContacts => 'Contacts';
 
   @override
+  String get navScanLists => 'Listes de balayage';
+
+  @override
   String get navSettings => 'Réglages';
 
   @override
@@ -226,6 +229,12 @@ class L10nFr extends L10n {
 
   @override
   String get delete => 'Supprimer';
+
+  @override
+  String get undo => 'Annuler';
+
+  @override
+  String get redo => 'Rétablir';
 
   @override
   String get nameRequired => 'Le nom est requis';
@@ -445,4 +454,56 @@ class L10nFr extends L10n {
 
   @override
   String get importQdmrError => 'Erreur lors de l\'import du fichier qdmr';
+
+  @override
+  String get scanLists => 'Listes de balayage';
+
+  @override
+  String get scanListsEmpty => 'Aucune liste de balayage';
+
+  @override
+  String get scanListsEmptyHint =>
+      'Les listes de balayage permettent de scanner plusieurs canaux';
+
+  @override
+  String get addScanList => 'Ajouter une liste';
+
+  @override
+  String get editScanList => 'Modifier la liste';
+
+  @override
+  String get duplicateScanList => 'Dupliquer la liste';
+
+  @override
+  String get deleteScanList => 'Supprimer la liste';
+
+  @override
+  String scanListChannelCount(int count) {
+    return '$count canaux';
+  }
+
+  @override
+  String get scanListChannels => 'Canaux de la liste';
+
+  @override
+  String get noChannelsInScanList => 'Aucun canal dans cette liste';
+
+  @override
+  String get addToScanList => 'Ajouter à la liste';
+
+  @override
+  String get removeFromScanList => 'Retirer de la liste';
+
+  @override
+  String get allChannelsAdded => 'Tous les canaux ajoutés';
+
+  @override
+  String get priorityChannel => 'Prioritaire';
+
+  @override
+  String get setPriorityChannel => 'Définir comme canal prioritaire';
+
+  @override
+  String get helpScanList =>
+      'Une liste de balayage est un groupe de canaux que votre radio parcourt pour détecter l\'activité. Vous pouvez définir un canal prioritaire qui sera vérifié plus fréquemment.';
 }

@@ -7,6 +7,7 @@
   "navChannels": "Canaux",
   "navZones": "Zones",
   "navContacts": "Contacts",
+  "navScanLists": "Listes de balayage",
   "navSettings": "Réglages",
 
   "welcomeTitle": "Bienvenue sur Ndmr",
@@ -94,6 +95,8 @@
   "cancel": "Annuler",
   "save": "Enregistrer",
   "delete": "Supprimer",
+  "undo": "Annuler",
+  "redo": "Rétablir",
 
   "nameRequired": "Le nom est requis",
   "fieldRequired": "Requis",
@@ -195,5 +198,27 @@
       "name": {"type": "String"}
     }
   },
-  "importQdmrError": "Erreur lors de l'import du fichier qdmr"
+  "importQdmrError": "Erreur lors de l'import du fichier qdmr",
+
+  "scanLists": "Listes de balayage",
+  "scanListsEmpty": "Aucune liste de balayage",
+  "scanListsEmptyHint": "Les listes de balayage permettent de scanner plusieurs canaux",
+  "addScanList": "Ajouter une liste",
+  "editScanList": "Modifier la liste",
+  "duplicateScanList": "Dupliquer la liste",
+  "deleteScanList": "Supprimer la liste",
+  "scanListChannelCount": "{count} canaux",
+  "@scanListChannelCount": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+  "scanListChannels": "Canaux de la liste",
+  "noChannelsInScanList": "Aucun canal dans cette liste",
+  "addToScanList": "Ajouter à la liste",
+  "removeFromScanList": "Retirer de la liste",
+  "allChannelsAdded": "Tous les canaux ajoutés",
+  "priorityChannel": "Prioritaire",
+  "setPriorityChannel": "Définir comme canal prioritaire",
+  "helpScanList": "Une liste de balayage est un groupe de canaux que votre radio parcourt pour détecter l'activité. Vous pouvez définir un canal prioritaire qui sera vérifié plus fréquemment."
 }

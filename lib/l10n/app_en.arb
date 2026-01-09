@@ -7,6 +7,7 @@
   "navChannels": "Channels",
   "navZones": "Zones",
   "navContacts": "Contacts",
+  "navScanLists": "Scan Lists",
   "navSettings": "Settings",
 
   "welcomeTitle": "Welcome to Ndmr",
@@ -84,6 +85,8 @@
   "cancel": "Cancel",
   "save": "Save",
   "delete": "Delete",
+  "undo": "Undo",
+  "redo": "Redo",
 
   "nameRequired": "Name is required",
   "fieldRequired": "Required",
@@ -180,5 +183,27 @@
       "name": {"type": "String"}
     }
   },
-  "importQdmrError": "Error importing qdmr file"
+  "importQdmrError": "Error importing qdmr file",
+
+  "scanLists": "Scan Lists",
+  "scanListsEmpty": "No scan lists",
+  "scanListsEmptyHint": "Scan lists let your radio scan multiple channels",
+  "addScanList": "Add Scan List",
+  "editScanList": "Edit Scan List",
+  "duplicateScanList": "Duplicate Scan List",
+  "deleteScanList": "Delete Scan List",
+  "scanListChannelCount": "{count} channels",
+  "@scanListChannelCount": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+  "scanListChannels": "Scan list channels",
+  "noChannelsInScanList": "No channels in this scan list",
+  "addToScanList": "Add to scan list",
+  "removeFromScanList": "Remove from scan list",
+  "allChannelsAdded": "All channels added",
+  "priorityChannel": "Priority",
+  "setPriorityChannel": "Set as priority channel",
+  "helpScanList": "A scan list is a group of channels your radio will cycle through to find activity. You can set a priority channel that will be checked more frequently."
 }

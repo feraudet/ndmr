@@ -186,6 +186,12 @@ class DashboardScreen extends ConsumerWidget {
                 helpText: l10n.helpContact,
                 details: _buildContactDetails(codeplug, l10n),
               ),
+              _StatCard(
+                icon: Icons.playlist_play,
+                label: l10n.scanLists,
+                value: codeplug.scanLists.length.toString(),
+                helpText: l10n.helpScanList,
+              ),
             ],
           ),
           const SizedBox(height: 24),

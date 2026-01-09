@@ -24,6 +24,9 @@ class L10nEn extends L10n {
   String get navContacts => 'Contacts';
 
   @override
+  String get navScanLists => 'Scan Lists';
+
+  @override
   String get navSettings => 'Settings';
 
   @override
@@ -224,6 +227,12 @@ class L10nEn extends L10n {
 
   @override
   String get delete => 'Delete';
+
+  @override
+  String get undo => 'Undo';
+
+  @override
+  String get redo => 'Redo';
 
   @override
   String get nameRequired => 'Name is required';
@@ -440,4 +449,56 @@ class L10nEn extends L10n {
 
   @override
   String get importQdmrError => 'Error importing qdmr file';
+
+  @override
+  String get scanLists => 'Scan Lists';
+
+  @override
+  String get scanListsEmpty => 'No scan lists';
+
+  @override
+  String get scanListsEmptyHint =>
+      'Scan lists let your radio scan multiple channels';
+
+  @override
+  String get addScanList => 'Add Scan List';
+
+  @override
+  String get editScanList => 'Edit Scan List';
+
+  @override
+  String get duplicateScanList => 'Duplicate Scan List';
+
+  @override
+  String get deleteScanList => 'Delete Scan List';
+
+  @override
+  String scanListChannelCount(int count) {
+    return '$count channels';
+  }
+
+  @override
+  String get scanListChannels => 'Scan list channels';
+
+  @override
+  String get noChannelsInScanList => 'No channels in this scan list';
+
+  @override
+  String get addToScanList => 'Add to scan list';
+
+  @override
+  String get removeFromScanList => 'Remove from scan list';
+
+  @override
+  String get allChannelsAdded => 'All channels added';
+
+  @override
+  String get priorityChannel => 'Priority';
+
+  @override
+  String get setPriorityChannel => 'Set as priority channel';
+
+  @override
+  String get helpScanList =>
+      'A scan list is a group of channels your radio will cycle through to find activity. You can set a priority channel that will be checked more frequently.';
 }

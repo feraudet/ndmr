@@ -127,6 +127,12 @@ abstract class L10n {
   /// **'Contacts'**
   String get navContacts;
 
+  /// No description provided for @navScanLists.
+  ///
+  /// In fr, this message translates to:
+  /// **'Listes de balayage'**
+  String get navScanLists;
+
   /// No description provided for @navSettings.
   ///
   /// In fr, this message translates to:
@@ -523,6 +529,18 @@ abstract class L10n {
   /// **'Supprimer'**
   String get delete;
 
+  /// No description provided for @undo.
+  ///
+  /// In fr, this message translates to:
+  /// **'Annuler'**
+  String get undo;
+
+  /// No description provided for @redo.
+  ///
+  /// In fr, this message translates to:
+  /// **'Rétablir'**
+  String get redo;
+
   /// No description provided for @nameRequired.
   ///
   /// In fr, this message translates to:
@@ -900,6 +918,102 @@ abstract class L10n {
   /// In fr, this message translates to:
   /// **'Erreur lors de l\'import du fichier qdmr'**
   String get importQdmrError;
+
+  /// No description provided for @scanLists.
+  ///
+  /// In fr, this message translates to:
+  /// **'Listes de balayage'**
+  String get scanLists;
+
+  /// No description provided for @scanListsEmpty.
+  ///
+  /// In fr, this message translates to:
+  /// **'Aucune liste de balayage'**
+  String get scanListsEmpty;
+
+  /// No description provided for @scanListsEmptyHint.
+  ///
+  /// In fr, this message translates to:
+  /// **'Les listes de balayage permettent de scanner plusieurs canaux'**
+  String get scanListsEmptyHint;
+
+  /// No description provided for @addScanList.
+  ///
+  /// In fr, this message translates to:
+  /// **'Ajouter une liste'**
+  String get addScanList;
+
+  /// No description provided for @editScanList.
+  ///
+  /// In fr, this message translates to:
+  /// **'Modifier la liste'**
+  String get editScanList;
+
+  /// No description provided for @duplicateScanList.
+  ///
+  /// In fr, this message translates to:
+  /// **'Dupliquer la liste'**
+  String get duplicateScanList;
+
+  /// No description provided for @deleteScanList.
+  ///
+  /// In fr, this message translates to:
+  /// **'Supprimer la liste'**
+  String get deleteScanList;
+
+  /// No description provided for @scanListChannelCount.
+  ///
+  /// In fr, this message translates to:
+  /// **'{count} canaux'**
+  String scanListChannelCount(int count);
+
+  /// No description provided for @scanListChannels.
+  ///
+  /// In fr, this message translates to:
+  /// **'Canaux de la liste'**
+  String get scanListChannels;
+
+  /// No description provided for @noChannelsInScanList.
+  ///
+  /// In fr, this message translates to:
+  /// **'Aucun canal dans cette liste'**
+  String get noChannelsInScanList;
+
+  /// No description provided for @addToScanList.
+  ///
+  /// In fr, this message translates to:
+  /// **'Ajouter à la liste'**
+  String get addToScanList;
+
+  /// No description provided for @removeFromScanList.
+  ///
+  /// In fr, this message translates to:
+  /// **'Retirer de la liste'**
+  String get removeFromScanList;
+
+  /// No description provided for @allChannelsAdded.
+  ///
+  /// In fr, this message translates to:
+  /// **'Tous les canaux ajoutés'**
+  String get allChannelsAdded;
+
+  /// No description provided for @priorityChannel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Prioritaire'**
+  String get priorityChannel;
+
+  /// No description provided for @setPriorityChannel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Définir comme canal prioritaire'**
+  String get setPriorityChannel;
+
+  /// No description provided for @helpScanList.
+  ///
+  /// In fr, this message translates to:
+  /// **'Une liste de balayage est un groupe de canaux que votre radio parcourt pour détecter l\'activité. Vous pouvez définir un canal prioritaire qui sera vérifié plus fréquemment.'**
+  String get helpScanList;
 }
 
 class _L10nDelegate extends LocalizationsDelegate<L10n> {

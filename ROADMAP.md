@@ -62,6 +62,8 @@ Créer un éditeur de codeplug DMR moderne, multiplateforme et accessible aux d�
 - [x] **Feature** Réorganisation contacts/zones par drag & drop
 - [x] **Feature** Sélecteur de thème (clair/sombre/système)
 - [x] **Feature** Statistiques détaillées sur le dashboard
+- [x] **Feature** Gestion des ScanLists (UI complète)
+- [x] **Feature** Undo/Redo (Cmd/Ctrl+Z, Cmd/Ctrl+Shift+Z)
 
 ## Historique des versions
 

@@ -190,4 +190,16 @@ class CodeplugNotifier extends _$CodeplugNotifier {
       modifiedAt: DateTime.now(),
     );
   }
+
+  void reorderScanLists(int oldIndex, int newIndex) {
+    if (state == null) return;
+    final scanLists = List<ScanList>.from(state!.scanLists);
+    if (newIndex > oldIndex) newIndex--;
+    final scanList = scanLists.removeAt(oldIndex);
+    scanLists.insert(newIndex, scanList);
+    state = state!.copyWith(
+      scanLists: scanLists,
+      modifiedAt: DateTime.now(),
+    );
+  }
 }
