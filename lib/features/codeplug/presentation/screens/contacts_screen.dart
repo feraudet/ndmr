@@ -351,6 +351,11 @@ class _ContactTile extends ConsumerWidget {
               onPressed: () => _showEditDialog(context, ref),
             ),
             IconButton(
+              icon: const Icon(Icons.copy),
+              tooltip: l10n.duplicateContact,
+              onPressed: () => _duplicateContact(ref),
+            ),
+            IconButton(
               icon: const Icon(Icons.delete),
               tooltip: l10n.deleteContact,
               onPressed: () => _confirmDelete(context, ref),
@@ -358,6 +363,14 @@ class _ContactTile extends ConsumerWidget {
           ],
         ),
       );
+
+  void _duplicateContact(WidgetRef ref) {
+    final duplicate = contact.copyWith(
+      id: _uuid.v4(),
+      name: '${contact.name} (copy)',
+    );
+    ref.read(codeplugNotifierProvider.notifier).addContact(duplicate);
+  }
 
   Future<void> _showEditDialog(BuildContext context, WidgetRef ref) async {
     final nameController = TextEditingController(text: contact.name);

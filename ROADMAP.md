@@ -1,6 +1,6 @@
 # Roadmap Ndmr
 
-> Dernière mise à jour : 2026-01-08
+> Dernière mise à jour : 2026-01-09
 
 ## Vision
 
@@ -57,10 +57,16 @@ Créer un éditeur de codeplug DMR moderne, multiplateforme et accessible aux d�
 - [ ] **Feature** Synchronisation cloud des codeplugs
 - [ ] **Feature** Mode hors-ligne complet sur mobile
 - [ ] **Feature** Thèmes personnalisables
-- [ ] **Feature** Duplication de contacts/zones
-- [ ] **Feature** Réorganisation des canaux par drag & drop
+- [x] **Feature** Duplication de contacts/zones
+- [x] **Feature** Réorganisation des canaux par drag & drop
 
 ## Historique des versions
+
+### v0.5.0 - 2026-01-09
+- Optimisation performance (debouncing recherche)
+- Duplication de canaux, contacts et zones
+- Export PDF du codeplug
+- Réorganisation des canaux par drag & drop
 
 ### v0.4.0 - 2026-01-08
 - Import de fichiers qdmr (.yaml)

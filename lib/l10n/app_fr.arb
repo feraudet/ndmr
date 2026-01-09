@@ -36,6 +36,7 @@
   "zonesEmptyHint": "Les zones permettent d'organiser vos canaux",
   "addZone": "Ajouter une zone",
   "editZone": "Modifier la zone",
+  "duplicateZone": "Dupliquer la zone",
   "deleteZone": "Supprimer la zone",
   "zoneChannelCount": "{count} canaux",
   "@zoneChannelCount": {
@@ -49,6 +50,7 @@
   "contactsEmptyHint": "Ajoutez des groupes de discussion et contacts privés",
   "addContact": "Ajouter un contact",
   "editContact": "Modifier le contact",
+  "duplicateContact": "Dupliquer le contact",
   "deleteContact": "Supprimer le contact",
 
   "settings": "Réglages",

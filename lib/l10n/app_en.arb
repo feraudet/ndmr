@@ -31,6 +31,7 @@
   "zonesEmptyHint": "Zones help you organize your channels",
   "addZone": "Add Zone",
   "editZone": "Edit Zone",
+  "duplicateZone": "Duplicate Zone",
   "deleteZone": "Delete Zone",
   "zoneChannelCount": "{count} channels",
 
@@ -39,6 +40,7 @@
   "contactsEmptyHint": "Add talk groups and private contacts",
   "addContact": "Add Contact",
   "editContact": "Edit Contact",
+  "duplicateContact": "Duplicate Contact",
   "deleteContact": "Delete Contact",
 
   "settings": "Settings",

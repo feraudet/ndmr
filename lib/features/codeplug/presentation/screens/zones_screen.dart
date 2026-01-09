@@ -98,6 +98,11 @@ class ZonesScreen extends ConsumerWidget {
                               onPressed: () => _showEditDialog(context, ref, zone, l10n),
                             ),
                             IconButton(
+                              icon: const Icon(Icons.copy),
+                              tooltip: l10n.duplicateZone,
+                              onPressed: () => _duplicateZone(ref, zone),
+                            ),
+                            IconButton(
                               icon: const Icon(Icons.delete),
                               tooltip: l10n.deleteZone,
                               onPressed: () => _confirmDelete(context, ref, zone, l10n),
@@ -116,6 +121,15 @@ class ZonesScreen extends ConsumerWidget {
         child: const Icon(Icons.add),
       ),
     );
+  }
+
+  void _duplicateZone(WidgetRef ref, Zone zone) {
+    final duplicate = Zone(
+      id: _uuid.v4(),
+      name: '${zone.name} (copy)',
+      channelIds: List.from(zone.channelIds),
+    );
+    ref.read(codeplugNotifierProvider.notifier).addZone(duplicate);
   }
 
   Future<void> _showAddDialog(BuildContext context, WidgetRef ref, L10n l10n) async {

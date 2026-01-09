@@ -41,6 +41,8 @@ class _ChannelsScreenState extends ConsumerState<ChannelsScreen> {
     });
   }
 
+  bool get _isFiltered => _searchQuery.isNotEmpty || _modeFilter != null;
+
   List<Channel> _filterChannels(List<Channel> channels) {
     var filtered = channels;
 
@@ -178,16 +180,34 @@ class _ChannelsScreenState extends ConsumerState<ChannelsScreen> {
                 ? _buildEmptyState(context, l10n)
                 : filteredChannels.isEmpty
                     ? _buildNoResultsState(context, l10n)
-                    : ListView.builder(
-                        itemCount: filteredChannels.length,
-                        itemBuilder: (context, index) {
-                          final channel = filteredChannels[index];
-                          return _ChannelTile(
-                            channel: channel,
-                            l10n: l10n,
-                          );
-                        },
-                      ),
+                    : _isFiltered
+                        ? ListView.builder(
+                            itemCount: filteredChannels.length,
+                            itemBuilder: (context, index) {
+                              final channel = filteredChannels[index];
+                              return _ChannelTile(
+                                key: ValueKey(channel.id),
+                                channel: channel,
+                                l10n: l10n,
+                              );
+                            },
+                          )
+                        : ReorderableListView.builder(
+                            itemCount: allChannels.length,
+                            onReorder: (oldIndex, newIndex) {
+                              ref
+                                  .read(codeplugNotifierProvider.notifier)
+                                  .reorderChannels(oldIndex, newIndex);
+                            },
+                            itemBuilder: (context, index) {
+                              final channel = allChannels[index];
+                              return _ChannelTile(
+                                key: ValueKey(channel.id),
+                                channel: channel,
+                                l10n: l10n,
+                              );
+                            },
+                          ),
           ),
         ],
       ),
@@ -310,6 +330,7 @@ class _ChannelsScreenState extends ConsumerState<ChannelsScreen> {
 
 class _ChannelTile extends ConsumerWidget {
   const _ChannelTile({
+    super.key,
     required this.channel,
     required this.l10n,
   });

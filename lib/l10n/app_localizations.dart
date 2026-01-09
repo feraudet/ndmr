@@ -247,6 +247,12 @@ abstract class L10n {
   /// **'Modifier la zone'**
   String get editZone;
 
+  /// No description provided for @duplicateZone.
+  ///
+  /// In fr, this message translates to:
+  /// **'Dupliquer la zone'**
+  String get duplicateZone;
+
   /// No description provided for @deleteZone.
   ///
   /// In fr, this message translates to:
@@ -288,6 +294,12 @@ abstract class L10n {
   /// In fr, this message translates to:
   /// **'Modifier le contact'**
   String get editContact;
+
+  /// No description provided for @duplicateContact.
+  ///
+  /// In fr, this message translates to:
+  /// **'Dupliquer le contact'**
+  String get duplicateContact;
 
   /// No description provided for @deleteContact.
   ///

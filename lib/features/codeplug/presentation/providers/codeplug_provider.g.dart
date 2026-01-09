@@ -6,7 +6,7 @@ part of 'codeplug_provider.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$codeplugNotifierHash() => r'bc2084b541cd47173facacab4d46856489674a14';
+String _$codeplugNotifierHash() => r'031bb80be3b30b7b037617c9b3d1bf36c0c783f2';
 
 /// See also [CodeplugNotifier].
 @ProviderFor(CodeplugNotifier)

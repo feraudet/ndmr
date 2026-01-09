@@ -86,6 +86,9 @@ class L10nEn extends L10n {
   String get editZone => 'Edit Zone';
 
   @override
+  String get duplicateZone => 'Duplicate Zone';
+
+  @override
   String get deleteZone => 'Delete Zone';
 
   @override
@@ -107,6 +110,9 @@ class L10nEn extends L10n {
 
   @override
   String get editContact => 'Edit Contact';
+
+  @override
+  String get duplicateContact => 'Duplicate Contact';
 
   @override
   String get deleteContact => 'Delete Contact';

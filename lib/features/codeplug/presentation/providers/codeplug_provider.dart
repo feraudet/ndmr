@@ -80,6 +80,18 @@ class CodeplugNotifier extends _$CodeplugNotifier {
     );
   }
 
+  void reorderChannels(int oldIndex, int newIndex) {
+    if (state == null) return;
+    final channels = List<Channel>.from(state!.channels);
+    if (newIndex > oldIndex) newIndex--;
+    final channel = channels.removeAt(oldIndex);
+    channels.insert(newIndex, channel);
+    state = state!.copyWith(
+      channels: channels,
+      modifiedAt: DateTime.now(),
+    );
+  }
+
   // Contact operations
   void addContact(Contact contact) {
     if (state == null) return;
