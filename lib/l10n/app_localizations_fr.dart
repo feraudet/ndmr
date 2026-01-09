@@ -506,4 +506,49 @@ class L10nFr extends L10n {
   @override
   String get helpScanList =>
       'Une liste de balayage est un groupe de canaux que votre radio parcourt pour détecter l\'activité. Vous pouvez définir un canal prioritaire qui sera vérifié plus fréquemment.';
+
+  @override
+  String get repeaterbookTitle => 'Importer depuis Repeaterbook';
+
+  @override
+  String get repeaterbookSubtitle =>
+      'Recherchez des relais DMR et importez-les comme canaux';
+
+  @override
+  String get repeaterbookCountry => 'Pays';
+
+  @override
+  String get repeaterbookCity => 'Ville (optionnel)';
+
+  @override
+  String get repeaterbookCityHint => 'Filtrer par ville';
+
+  @override
+  String get repeaterbookSearch => 'Rechercher';
+
+  @override
+  String get repeaterbookImport => 'Importer';
+
+  @override
+  String get repeaterbookHint =>
+      'Sélectionnez un pays et recherchez des relais DMR';
+
+  @override
+  String repeaterbookSelected(int selected, int total) {
+    return '$selected sur $total sélectionnés';
+  }
+
+  @override
+  String get repeaterbookSelectAll => 'Tout sélectionner';
+
+  @override
+  String get repeaterbookDeselectAll => 'Tout désélectionner';
+
+  @override
+  String repeaterbookSuccess(int count) {
+    return '$count relais importés';
+  }
+
+  @override
+  String get repeaterbookNoConfig => 'Créez d\'abord une configuration';
 }

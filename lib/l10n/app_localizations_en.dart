@@ -501,4 +501,49 @@ class L10nEn extends L10n {
   @override
   String get helpScanList =>
       'A scan list is a group of channels your radio will cycle through to find activity. You can set a priority channel that will be checked more frequently.';
+
+  @override
+  String get repeaterbookTitle => 'Import from Repeaterbook';
+
+  @override
+  String get repeaterbookSubtitle =>
+      'Search for DMR repeaters and import them as channels';
+
+  @override
+  String get repeaterbookCountry => 'Country';
+
+  @override
+  String get repeaterbookCity => 'City (optional)';
+
+  @override
+  String get repeaterbookCityHint => 'Filter by city';
+
+  @override
+  String get repeaterbookSearch => 'Search';
+
+  @override
+  String get repeaterbookImport => 'Import';
+
+  @override
+  String get repeaterbookHint =>
+      'Select a country and search for DMR repeaters';
+
+  @override
+  String repeaterbookSelected(int selected, int total) {
+    return '$selected of $total selected';
+  }
+
+  @override
+  String get repeaterbookSelectAll => 'Select all';
+
+  @override
+  String get repeaterbookDeselectAll => 'Deselect all';
+
+  @override
+  String repeaterbookSuccess(int count) {
+    return '$count repeaters imported';
+  }
+
+  @override
+  String get repeaterbookNoConfig => 'Create a configuration first';
 }

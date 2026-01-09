@@ -220,5 +220,30 @@
   "allChannelsAdded": "Tous les canaux ajoutés",
   "priorityChannel": "Prioritaire",
   "setPriorityChannel": "Définir comme canal prioritaire",
-  "helpScanList": "Une liste de balayage est un groupe de canaux que votre radio parcourt pour détecter l'activité. Vous pouvez définir un canal prioritaire qui sera vérifié plus fréquemment."
+  "helpScanList": "Une liste de balayage est un groupe de canaux que votre radio parcourt pour détecter l'activité. Vous pouvez définir un canal prioritaire qui sera vérifié plus fréquemment.",
+
+  "repeaterbookTitle": "Importer depuis Repeaterbook",
+  "repeaterbookSubtitle": "Recherchez des relais DMR et importez-les comme canaux",
+  "repeaterbookCountry": "Pays",
+  "repeaterbookCity": "Ville (optionnel)",
+  "repeaterbookCityHint": "Filtrer par ville",
+  "repeaterbookSearch": "Rechercher",
+  "repeaterbookImport": "Importer",
+  "repeaterbookHint": "Sélectionnez un pays et recherchez des relais DMR",
+  "repeaterbookSelected": "{selected} sur {total} sélectionnés",
+  "@repeaterbookSelected": {
+    "placeholders": {
+      "selected": {"type": "int"},
+      "total": {"type": "int"}
+    }
+  },
+  "repeaterbookSelectAll": "Tout sélectionner",
+  "repeaterbookDeselectAll": "Tout désélectionner",
+  "repeaterbookSuccess": "{count} relais importés",
+  "@repeaterbookSuccess": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+  "repeaterbookNoConfig": "Créez d'abord une configuration"
 }

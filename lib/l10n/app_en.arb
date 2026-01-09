@@ -205,5 +205,30 @@
   "allChannelsAdded": "All channels added",
   "priorityChannel": "Priority",
   "setPriorityChannel": "Set as priority channel",
-  "helpScanList": "A scan list is a group of channels your radio will cycle through to find activity. You can set a priority channel that will be checked more frequently."
+  "helpScanList": "A scan list is a group of channels your radio will cycle through to find activity. You can set a priority channel that will be checked more frequently.",
+
+  "repeaterbookTitle": "Import from Repeaterbook",
+  "repeaterbookSubtitle": "Search for DMR repeaters and import them as channels",
+  "repeaterbookCountry": "Country",
+  "repeaterbookCity": "City (optional)",
+  "repeaterbookCityHint": "Filter by city",
+  "repeaterbookSearch": "Search",
+  "repeaterbookImport": "Import",
+  "repeaterbookHint": "Select a country and search for DMR repeaters",
+  "repeaterbookSelected": "{selected} of {total} selected",
+  "@repeaterbookSelected": {
+    "placeholders": {
+      "selected": {"type": "int"},
+      "total": {"type": "int"}
+    }
+  },
+  "repeaterbookSelectAll": "Select all",
+  "repeaterbookDeselectAll": "Deselect all",
+  "repeaterbookSuccess": "{count} repeaters imported",
+  "@repeaterbookSuccess": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+  "repeaterbookNoConfig": "Create a configuration first"
 }

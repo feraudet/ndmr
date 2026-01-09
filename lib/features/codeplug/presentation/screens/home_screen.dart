@@ -14,6 +14,7 @@ import 'dashboard_screen.dart';
 import 'scan_lists_screen.dart';
 import 'settings_screen.dart';
 import 'zones_screen.dart';
+import '../widgets/repeaterbook_import_dialog.dart';
 
 class HomeScreen extends ConsumerStatefulWidget {
   const HomeScreen({super.key});
@@ -136,6 +137,27 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
 
     final pdfService = PdfExportService();
     await pdfService.exportToPdf(codeplug);
+  }
+
+  Future<void> _openRepeaterbookImport(L10n l10n) async {
+    final codeplug = ref.read(codeplugNotifierProvider);
+    if (codeplug == null) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text(l10n.repeaterbookNoConfig)),
+      );
+      return;
+    }
+
+    final result = await showDialog<int>(
+      context: context,
+      builder: (context) => const RepeaterbookImportDialog(),
+    );
+
+    if (result != null && result > 0 && mounted) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text(l10n.repeaterbookSuccess(result))),
+      );
+    }
   }
 
   Widget _buildBody() {
@@ -348,6 +370,11 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
             icon: const Icon(Icons.picture_as_pdf),
             tooltip: l10n.exportPdf,
             onPressed: _exportPdf,
+          ),
+          IconButton(
+            icon: const Icon(Icons.cell_tower),
+            tooltip: l10n.repeaterbookTitle,
+            onPressed: () => _openRepeaterbookImport(l10n),
           ),
         ],
       ),

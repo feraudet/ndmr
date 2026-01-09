@@ -1014,6 +1014,84 @@ abstract class L10n {
   /// In fr, this message translates to:
   /// **'Une liste de balayage est un groupe de canaux que votre radio parcourt pour détecter l\'activité. Vous pouvez définir un canal prioritaire qui sera vérifié plus fréquemment.'**
   String get helpScanList;
+
+  /// No description provided for @repeaterbookTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Importer depuis Repeaterbook'**
+  String get repeaterbookTitle;
+
+  /// No description provided for @repeaterbookSubtitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Recherchez des relais DMR et importez-les comme canaux'**
+  String get repeaterbookSubtitle;
+
+  /// No description provided for @repeaterbookCountry.
+  ///
+  /// In fr, this message translates to:
+  /// **'Pays'**
+  String get repeaterbookCountry;
+
+  /// No description provided for @repeaterbookCity.
+  ///
+  /// In fr, this message translates to:
+  /// **'Ville (optionnel)'**
+  String get repeaterbookCity;
+
+  /// No description provided for @repeaterbookCityHint.
+  ///
+  /// In fr, this message translates to:
+  /// **'Filtrer par ville'**
+  String get repeaterbookCityHint;
+
+  /// No description provided for @repeaterbookSearch.
+  ///
+  /// In fr, this message translates to:
+  /// **'Rechercher'**
+  String get repeaterbookSearch;
+
+  /// No description provided for @repeaterbookImport.
+  ///
+  /// In fr, this message translates to:
+  /// **'Importer'**
+  String get repeaterbookImport;
+
+  /// No description provided for @repeaterbookHint.
+  ///
+  /// In fr, this message translates to:
+  /// **'Sélectionnez un pays et recherchez des relais DMR'**
+  String get repeaterbookHint;
+
+  /// No description provided for @repeaterbookSelected.
+  ///
+  /// In fr, this message translates to:
+  /// **'{selected} sur {total} sélectionnés'**
+  String repeaterbookSelected(int selected, int total);
+
+  /// No description provided for @repeaterbookSelectAll.
+  ///
+  /// In fr, this message translates to:
+  /// **'Tout sélectionner'**
+  String get repeaterbookSelectAll;
+
+  /// No description provided for @repeaterbookDeselectAll.
+  ///
+  /// In fr, this message translates to:
+  /// **'Tout désélectionner'**
+  String get repeaterbookDeselectAll;
+
+  /// No description provided for @repeaterbookSuccess.
+  ///
+  /// In fr, this message translates to:
+  /// **'{count} relais importés'**
+  String repeaterbookSuccess(int count);
+
+  /// No description provided for @repeaterbookNoConfig.
+  ///
+  /// In fr, this message translates to:
+  /// **'Créez d\'abord une configuration'**
+  String get repeaterbookNoConfig;
 }
 
 class _L10nDelegate extends LocalizationsDelegate<L10n> {
