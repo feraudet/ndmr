@@ -26,11 +26,14 @@ Créer un éditeur de codeplug DMR moderne, multiplateforme et accessible aux d�
 
 - [x] **Feature** Assistant de première configuration (wizard)
 - [x] **Feature** Import/export CSV pour les canaux
-- [ ] **Feature** Import depuis fichiers qdmr (.yaml)
+- [x] **Feature** Import depuis fichiers qdmr (.yaml)
 - [x] **Feature** Recherche et filtrage des canaux/contacts
 - [x] **Feature** Attribution canaux aux zones (drag & drop)
 - [x] **Feature** Validation du codeplug avant export
-- [ ] **Perf** Gestion des gros codeplugs (1000+ canaux)
+- [x] **Feature** Raccourcis clavier (desktop)
+- [x] **Perf** Gestion des gros codeplugs (debouncing recherche)
+- [x] **Feature** Duplication de canaux
+- [x] **Feature** Export PDF du codeplug
 
 ### Phase 3 - Intégration Radio
 
@@ -54,10 +57,15 @@ Créer un éditeur de codeplug DMR moderne, multiplateforme et accessible aux d�
 - [ ] **Feature** Synchronisation cloud des codeplugs
 - [ ] **Feature** Mode hors-ligne complet sur mobile
 - [ ] **Feature** Thèmes personnalisables
-- [ ] **Feature** Raccourcis clavier (desktop)
-- [ ] **Feature** Export PDF du codeplug pour impression
+- [ ] **Feature** Duplication de contacts/zones
+- [ ] **Feature** Réorganisation des canaux par drag & drop
 
 ## Historique des versions
+
+### v0.4.0 - 2026-01-08
+- Import de fichiers qdmr (.yaml)
+- Recherche et filtrage des contacts
+- Raccourcis clavier desktop (Cmd/Ctrl+O/S, Cmd/Ctrl+1-5)
 
 ### v0.3.0 - 2026-01-08
 - Import/export CSV des canaux

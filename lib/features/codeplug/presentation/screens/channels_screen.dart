@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:uuid/uuid.dart';
@@ -23,11 +25,20 @@ class _ChannelsScreenState extends ConsumerState<ChannelsScreen> {
   final _csvService = CsvService();
   String _searchQuery = '';
   ChannelMode? _modeFilter;
+  Timer? _debounce;
 
   @override
   void dispose() {
+    _debounce?.cancel();
     _searchController.dispose();
     super.dispose();
+  }
+
+  void _onSearchChanged(String value) {
+    _debounce?.cancel();
+    _debounce = Timer(const Duration(milliseconds: 300), () {
+      setState(() => _searchQuery = value);
+    });
   }
 
   List<Channel> _filterChannels(List<Channel> channels) {
@@ -87,7 +98,7 @@ class _ChannelsScreenState extends ConsumerState<ChannelsScreen> {
                       border: const OutlineInputBorder(),
                       contentPadding: const EdgeInsets.symmetric(horizontal: 16),
                     ),
-                    onChanged: (value) => setState(() => _searchQuery = value),
+                    onChanged: _onSearchChanged,
                   ),
                 ),
                 const SizedBox(width: 8),
@@ -338,6 +349,11 @@ class _ChannelTile extends ConsumerWidget {
               onPressed: () => _showEditDialog(context, ref),
             ),
             IconButton(
+              icon: const Icon(Icons.copy),
+              tooltip: l10n.duplicateChannel,
+              onPressed: () => _duplicateChannel(ref),
+            ),
+            IconButton(
               icon: const Icon(Icons.delete),
               tooltip: l10n.deleteChannel,
               onPressed: () => _confirmDelete(context, ref),
@@ -345,6 +361,14 @@ class _ChannelTile extends ConsumerWidget {
           ],
         ),
       );
+
+  void _duplicateChannel(WidgetRef ref) {
+    final duplicate = channel.copyWith(
+      id: _uuid.v4(),
+      name: '${channel.name} (copy)',
+    );
+    ref.read(codeplugNotifierProvider.notifier).addChannel(duplicate);
+  }
 
   Future<void> _showEditDialog(BuildContext context, WidgetRef ref) async {
     final updated = await showDialog<Channel>(

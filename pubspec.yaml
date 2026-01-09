@@ -43,6 +43,10 @@ dependencies:
   # Responsive layout
   flutter_adaptive_scaffold: ^0.3.2
 
+  # PDF generation
+  pdf: ^3.11.0
+  printing: ^5.13.0
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

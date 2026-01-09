@@ -22,6 +22,7 @@
   "channelsEmptyHint": "Ajoutez votre premier canal pour commencer",
   "addChannel": "Ajouter un canal",
   "editChannel": "Modifier le canal",
+  "duplicateChannel": "Dupliquer le canal",
   "deleteChannel": "Supprimer le canal",
   "deleteChannelConfirm": "Supprimer \"{name}\" ?",
   "@deleteChannelConfirm": {
@@ -142,6 +143,7 @@
     }
   },
   "exportSuccess": "Export réussi",
+  "exportPdf": "Exporter en PDF",
   "importError": "Erreur lors de l'import",
   "noChannelsToExport": "Aucun canal à exporter",
 

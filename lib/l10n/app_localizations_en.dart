@@ -60,6 +60,9 @@ class L10nEn extends L10n {
   String get editChannel => 'Edit Channel';
 
   @override
+  String get duplicateChannel => 'Duplicate Channel';
+
+  @override
   String get deleteChannel => 'Delete Channel';
 
   @override
@@ -339,6 +342,9 @@ class L10nEn extends L10n {
 
   @override
   String get exportSuccess => 'Export successful';
+
+  @override
+  String get exportPdf => 'Export PDF';
 
   @override
   String get importError => 'Import error';

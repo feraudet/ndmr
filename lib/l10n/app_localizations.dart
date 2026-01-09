@@ -199,6 +199,12 @@ abstract class L10n {
   /// **'Modifier le canal'**
   String get editChannel;
 
+  /// No description provided for @duplicateChannel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Dupliquer le canal'**
+  String get duplicateChannel;
+
   /// No description provided for @deleteChannel.
   ///
   /// In fr, this message translates to:
@@ -714,6 +720,12 @@ abstract class L10n {
   /// In fr, this message translates to:
   /// **'Export réussi'**
   String get exportSuccess;
+
+  /// No description provided for @exportPdf.
+  ///
+  /// In fr, this message translates to:
+  /// **'Exporter en PDF'**
+  String get exportPdf;
 
   /// No description provided for @importError.
   ///

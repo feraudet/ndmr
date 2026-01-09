@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:uuid/uuid.dart';
@@ -20,11 +22,20 @@ class _ContactsScreenState extends ConsumerState<ContactsScreen> {
   final _searchController = TextEditingController();
   String _searchQuery = '';
   CallType? _callTypeFilter;
+  Timer? _debounce;
 
   @override
   void dispose() {
+    _debounce?.cancel();
     _searchController.dispose();
     super.dispose();
+  }
+
+  void _onSearchChanged(String value) {
+    _debounce?.cancel();
+    _debounce = Timer(const Duration(milliseconds: 300), () {
+      setState(() => _searchQuery = value);
+    });
   }
 
   List<Contact> _filterContacts(List<Contact> contacts) {
@@ -83,7 +94,7 @@ class _ContactsScreenState extends ConsumerState<ContactsScreen> {
                       border: const OutlineInputBorder(),
                       contentPadding: const EdgeInsets.symmetric(horizontal: 16),
                     ),
-                    onChanged: (value) => setState(() => _searchQuery = value),
+                    onChanged: _onSearchChanged,
                   ),
                 ),
                 const SizedBox(width: 8),

@@ -22,6 +22,7 @@
   "channelsEmptyHint": "Add your first channel to get started",
   "addChannel": "Add Channel",
   "editChannel": "Edit Channel",
+  "duplicateChannel": "Duplicate Channel",
   "deleteChannel": "Delete Channel",
   "deleteChannelConfirm": "Delete \"{name}\"?",
 
@@ -127,6 +128,7 @@
     }
   },
   "exportSuccess": "Export successful",
+  "exportPdf": "Export PDF",
   "importError": "Import error",
   "noChannelsToExport": "No channels to export",
 

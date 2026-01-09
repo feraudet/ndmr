@@ -4,6 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../../l10n/app_localizations.dart';
 import '../../data/repositories/codeplug_repository.dart';
+import '../../data/services/pdf_export_service.dart';
 import '../../data/services/validation_service.dart';
 import '../providers/codeplug_provider.dart';
 import 'channels_screen.dart';
@@ -109,6 +110,20 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
         SnackBar(content: Text(l10n.configSaved)),
       );
     }
+  }
+
+  Future<void> _exportPdf() async {
+    final l10n = L10n.of(context)!;
+    final codeplug = ref.read(codeplugNotifierProvider);
+    if (codeplug == null) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text(l10n.noConfigToSave)),
+      );
+      return;
+    }
+
+    final pdfService = PdfExportService();
+    await pdfService.exportToPdf(codeplug);
   }
 
   Widget _buildBody() {
@@ -283,6 +298,11 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
             icon: const Icon(Icons.save),
             tooltip: l10n.saveFile,
             onPressed: _saveFile,
+          ),
+          IconButton(
+            icon: const Icon(Icons.picture_as_pdf),
+            tooltip: l10n.exportPdf,
+            onPressed: _exportPdf,
           ),
         ],
       ),
