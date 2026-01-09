@@ -5,6 +5,7 @@ import 'package:url_launcher/url_launcher.dart';
 import '../../../../l10n/app_localizations.dart';
 import '../../../../shared/widgets/help_tooltip.dart';
 import '../providers/codeplug_provider.dart';
+import '../providers/dirty_state_provider.dart';
 
 class SetupWizard extends ConsumerStatefulWidget {
   const SetupWizard({super.key, required this.onComplete});
@@ -253,6 +254,7 @@ class _SetupWizardState extends ConsumerState<SetupWizard> {
 
   void _skipWizard() {
     ref.read(codeplugNotifierProvider.notifier).createNew();
+    ref.read(dirtyStateNotifierProvider.notifier).markAsDirty();
     widget.onComplete();
   }
 
@@ -266,6 +268,7 @@ class _SetupWizardState extends ConsumerState<SetupWizard> {
           callsign: callsign,
           addDefaultContacts: _addDefaultContacts,
         );
+    ref.read(dirtyStateNotifierProvider.notifier).markAsDirty();
 
     widget.onComplete();
   }

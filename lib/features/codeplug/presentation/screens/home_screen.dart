@@ -7,6 +7,7 @@ import '../../data/repositories/codeplug_repository.dart';
 import '../../data/services/pdf_export_service.dart';
 import '../../data/services/validation_service.dart';
 import '../providers/codeplug_provider.dart';
+import '../providers/dirty_state_provider.dart';
 import '../providers/history_provider.dart';
 import 'channels_screen.dart';
 import 'contacts_screen.dart';
@@ -98,6 +99,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
     final codeplug = await repo.loadFromFile();
     if (codeplug != null && mounted) {
       ref.read(codeplugNotifierProvider.notifier).load(codeplug);
+      ref.read(dirtyStateNotifierProvider.notifier).setInitialState(codeplug);
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(content: Text(l10n.configLoaded(codeplug.name))),
@@ -119,6 +121,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
     final repo = ref.read(codeplugRepositoryProvider);
     final saved = await repo.saveToFile(codeplug);
     if (mounted && saved) {
+      ref.read(dirtyStateNotifierProvider.notifier).markAsSaved();
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(content: Text(l10n.configSaved)),
       );
@@ -334,7 +337,11 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
         autofocus: true,
         child: Scaffold(
       appBar: AppBar(
-        title: Text(l10n.appTitle),
+        title: Text(
+          ref.watch(hasUnsavedChangesProvider)
+              ? '${l10n.appTitle} •'
+              : l10n.appTitle,
+        ),
         actions: [
           IconButton(
             icon: const Icon(Icons.undo),

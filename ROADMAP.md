@@ -65,6 +65,8 @@ Créer un éditeur de codeplug DMR moderne, multiplateforme et accessible aux d�
 - [x] **Feature** Gestion des ScanLists (UI complète)
 - [x] **Feature** Undo/Redo (Cmd/Ctrl+Z, Cmd/Ctrl+Shift+Z)
 - [x] **Feature** Import relais depuis Repeaterbook.com
+- [x] **Feature** Persistance du thème (SharedPreferences)
+- [x] **Feature** Indicateur de modifications non sauvegardées
 
 ## Historique des versions
 
