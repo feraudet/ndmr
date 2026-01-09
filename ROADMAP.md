@@ -59,14 +59,26 @@ Créer un éditeur de codeplug DMR moderne, multiplateforme et accessible aux d�
 - [ ] **Feature** Thèmes personnalisables
 - [x] **Feature** Duplication de contacts/zones
 - [x] **Feature** Réorganisation des canaux par drag & drop
+- [x] **Feature** Réorganisation contacts/zones par drag & drop
+- [x] **Feature** Sélecteur de thème (clair/sombre/système)
+- [x] **Feature** Statistiques détaillées sur le dashboard
 
 ## Historique des versions
 
+### v0.7.0 - 2026-01-09
+- Sélecteur de thème (clair/sombre/système) dans les réglages
+- Réorganisation des contacts et zones par drag & drop
+- Statistiques détaillées sur le dashboard (digital/analog, groups/private)
+- Corrections de dépréciation PDF
+
+### v0.6.0 - 2026-01-09
+- Duplication de contacts et zones
+- Réorganisation des canaux par drag & drop
+
 ### v0.5.0 - 2026-01-09
 - Optimisation performance (debouncing recherche)
-- Duplication de canaux, contacts et zones
+- Duplication de canaux
 - Export PDF du codeplug
-- Réorganisation des canaux par drag & drop
 
 ### v0.4.0 - 2026-01-08
 - Import de fichiers qdmr (.yaml)

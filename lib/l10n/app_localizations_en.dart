@@ -127,6 +127,30 @@ class L10nEn extends L10n {
   String get settingsDisplay => 'Display';
 
   @override
+  String get settingsTheme => 'Theme';
+
+  @override
+  String get themeSystem => 'System';
+
+  @override
+  String get themeLight => 'Light';
+
+  @override
+  String get themeDark => 'Dark';
+
+  @override
+  String get statsDigitalChannels => 'Digital';
+
+  @override
+  String get statsAnalogChannels => 'Analog';
+
+  @override
+  String get statsTalkGroups => 'Talk Groups';
+
+  @override
+  String get statsPrivateContacts => 'Private';
+
+  @override
   String get settingsSaved => 'Settings saved';
 
   @override

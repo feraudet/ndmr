@@ -117,6 +117,18 @@ class CodeplugNotifier extends _$CodeplugNotifier {
     );
   }
 
+  void reorderContacts(int oldIndex, int newIndex) {
+    if (state == null) return;
+    final contacts = List<Contact>.from(state!.contacts);
+    if (newIndex > oldIndex) newIndex--;
+    final contact = contacts.removeAt(oldIndex);
+    contacts.insert(newIndex, contact);
+    state = state!.copyWith(
+      contacts: contacts,
+      modifiedAt: DateTime.now(),
+    );
+  }
+
   // Zone operations
   void addZone(Zone zone) {
     if (state == null) return;
@@ -138,6 +150,18 @@ class CodeplugNotifier extends _$CodeplugNotifier {
     if (state == null) return;
     state = state!.copyWith(
       zones: state!.zones.where((z) => z.id != id).toList(),
+      modifiedAt: DateTime.now(),
+    );
+  }
+
+  void reorderZones(int oldIndex, int newIndex) {
+    if (state == null) return;
+    final zones = List<Zone>.from(state!.zones);
+    if (newIndex > oldIndex) newIndex--;
+    final zone = zones.removeAt(oldIndex);
+    zones.insert(newIndex, zone);
+    state = state!.copyWith(
+      zones: zones,
       modifiedAt: DateTime.now(),
     );
   }

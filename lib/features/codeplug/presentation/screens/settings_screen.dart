@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../../../core/theme/theme_provider.dart';
 import '../../../../l10n/app_localizations.dart';
 import '../../../../shared/widgets/help_tooltip.dart';
 import '../../data/models/models.dart';
@@ -154,6 +155,23 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
               ),
             ),
           ),
+          const SizedBox(height: 16),
+          Card(
+            child: Padding(
+              padding: const EdgeInsets.all(16),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    l10n.settingsTheme,
+                    style: Theme.of(context).textTheme.titleMedium,
+                  ),
+                  const SizedBox(height: 16),
+                  _ThemeSelector(l10n: l10n),
+                ],
+              ),
+            ),
+          ),
           const SizedBox(height: 24),
           FilledButton.icon(
             onPressed: () => _saveSettings(l10n),
@@ -180,6 +198,41 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
 
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(content: Text(l10n.settingsSaved)),
+    );
+  }
+}
+
+class _ThemeSelector extends ConsumerWidget {
+  const _ThemeSelector({required this.l10n});
+
+  final L10n l10n;
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final currentTheme = ref.watch(themeModeNotifierProvider);
+
+    return SegmentedButton<ThemeMode>(
+      segments: [
+        ButtonSegment(
+          value: ThemeMode.system,
+          label: Text(l10n.themeSystem),
+          icon: const Icon(Icons.settings_brightness),
+        ),
+        ButtonSegment(
+          value: ThemeMode.light,
+          label: Text(l10n.themeLight),
+          icon: const Icon(Icons.light_mode),
+        ),
+        ButtonSegment(
+          value: ThemeMode.dark,
+          label: Text(l10n.themeDark),
+          icon: const Icon(Icons.dark_mode),
+        ),
+      ],
+      selected: {currentTheme},
+      onSelectionChanged: (selected) {
+        ref.read(themeModeNotifierProvider.notifier).setThemeMode(selected.first);
+      },
     );
   }
 }

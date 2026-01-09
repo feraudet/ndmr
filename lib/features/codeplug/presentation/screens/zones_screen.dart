@@ -65,11 +65,17 @@ class ZonesScreen extends ConsumerWidget {
                       ],
                     ),
                   )
-                : ListView.builder(
+                : ReorderableListView.builder(
                     itemCount: zones.length,
+                    onReorder: (oldIndex, newIndex) {
+                      ref
+                          .read(codeplugNotifierProvider.notifier)
+                          .reorderZones(oldIndex, newIndex);
+                    },
                     itemBuilder: (context, index) {
                       final zone = zones[index];
                       return ListTile(
+                        key: ValueKey(zone.id),
                         leading: const CircleAvatar(child: Icon(Icons.folder)),
                         title: Text(zone.name),
                         subtitle: Text(l10n.zoneChannelCount(zone.channelIds.length)),

@@ -325,6 +325,54 @@ abstract class L10n {
   /// **'Affichage'**
   String get settingsDisplay;
 
+  /// No description provided for @settingsTheme.
+  ///
+  /// In fr, this message translates to:
+  /// **'Thème'**
+  String get settingsTheme;
+
+  /// No description provided for @themeSystem.
+  ///
+  /// In fr, this message translates to:
+  /// **'Système'**
+  String get themeSystem;
+
+  /// No description provided for @themeLight.
+  ///
+  /// In fr, this message translates to:
+  /// **'Clair'**
+  String get themeLight;
+
+  /// No description provided for @themeDark.
+  ///
+  /// In fr, this message translates to:
+  /// **'Sombre'**
+  String get themeDark;
+
+  /// No description provided for @statsDigitalChannels.
+  ///
+  /// In fr, this message translates to:
+  /// **'Numériques'**
+  String get statsDigitalChannels;
+
+  /// No description provided for @statsAnalogChannels.
+  ///
+  /// In fr, this message translates to:
+  /// **'Analogiques'**
+  String get statsAnalogChannels;
+
+  /// No description provided for @statsTalkGroups.
+  ///
+  /// In fr, this message translates to:
+  /// **'Talk Groups'**
+  String get statsTalkGroups;
+
+  /// No description provided for @statsPrivateContacts.
+  ///
+  /// In fr, this message translates to:
+  /// **'Privés'**
+  String get statsPrivateContacts;
+
   /// No description provided for @settingsSaved.
   ///
   /// In fr, this message translates to:

@@ -38,6 +38,8 @@ class _ContactsScreenState extends ConsumerState<ContactsScreen> {
     });
   }
 
+  bool get _isFiltered => _searchQuery.isNotEmpty || _callTypeFilter != null;
+
   List<Contact> _filterContacts(List<Contact> contacts) {
     var filtered = contacts;
 
@@ -145,16 +147,34 @@ class _ContactsScreenState extends ConsumerState<ContactsScreen> {
                 ? _buildEmptyState(context, l10n)
                 : filteredContacts.isEmpty
                     ? _buildNoResultsState(context, l10n)
-                    : ListView.builder(
-                        itemCount: filteredContacts.length,
-                        itemBuilder: (context, index) {
-                          final contact = filteredContacts[index];
-                          return _ContactTile(
-                            contact: contact,
-                            l10n: l10n,
-                          );
-                        },
-                      ),
+                    : _isFiltered
+                        ? ListView.builder(
+                            itemCount: filteredContacts.length,
+                            itemBuilder: (context, index) {
+                              final contact = filteredContacts[index];
+                              return _ContactTile(
+                                key: ValueKey(contact.id),
+                                contact: contact,
+                                l10n: l10n,
+                              );
+                            },
+                          )
+                        : ReorderableListView.builder(
+                            itemCount: allContacts.length,
+                            onReorder: (oldIndex, newIndex) {
+                              ref
+                                  .read(codeplugNotifierProvider.notifier)
+                                  .reorderContacts(oldIndex, newIndex);
+                            },
+                            itemBuilder: (context, index) {
+                              final contact = allContacts[index];
+                              return _ContactTile(
+                                key: ValueKey(contact.id),
+                                contact: contact,
+                                l10n: l10n,
+                              );
+                            },
+                          ),
           ),
         ],
       ),
@@ -306,6 +326,7 @@ class _ContactsScreenState extends ConsumerState<ContactsScreen> {
 
 class _ContactTile extends ConsumerWidget {
   const _ContactTile({
+    super.key,
     required this.contact,
     required this.l10n,
   });

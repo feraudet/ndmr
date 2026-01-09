@@ -129,6 +129,30 @@ class L10nFr extends L10n {
   String get settingsDisplay => 'Affichage';
 
   @override
+  String get settingsTheme => 'Thème';
+
+  @override
+  String get themeSystem => 'Système';
+
+  @override
+  String get themeLight => 'Clair';
+
+  @override
+  String get themeDark => 'Sombre';
+
+  @override
+  String get statsDigitalChannels => 'Numériques';
+
+  @override
+  String get statsAnalogChannels => 'Analogiques';
+
+  @override
+  String get statsTalkGroups => 'Talk Groups';
+
+  @override
+  String get statsPrivateContacts => 'Privés';
+
+  @override
   String get settingsSaved => 'Réglages enregistrés';
 
   @override

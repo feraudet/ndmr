@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../../l10n/app_localizations.dart';
 import '../../../../shared/widgets/help_tooltip.dart';
+import '../../data/models/models.dart';
 import '../../data/repositories/codeplug_repository.dart';
 import '../../data/services/qdmr_import_service.dart';
 import '../providers/codeplug_provider.dart';
@@ -31,6 +32,48 @@ class DashboardScreen extends ConsumerWidget {
         SnackBar(content: Text(l10n.importQdmrError)),
       );
     }
+  }
+
+  Widget _buildChannelDetails(Codeplug codeplug, L10n l10n) {
+    final digital = codeplug.channels.where((c) => c.mode == ChannelMode.digital).length;
+    final analog = codeplug.channels.length - digital;
+    return Row(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        _DetailChip(
+          icon: Icons.radio,
+          label: '$digital ${l10n.statsDigitalChannels}',
+          color: Colors.blue,
+        ),
+        const SizedBox(width: 8),
+        _DetailChip(
+          icon: Icons.radio_button_checked,
+          label: '$analog ${l10n.statsAnalogChannels}',
+          color: Colors.orange,
+        ),
+      ],
+    );
+  }
+
+  Widget _buildContactDetails(Codeplug codeplug, L10n l10n) {
+    final groups = codeplug.contacts.where((c) => c.callType == CallType.group).length;
+    final privates = codeplug.contacts.where((c) => c.callType == CallType.private).length;
+    return Row(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        _DetailChip(
+          icon: Icons.group,
+          label: '$groups ${l10n.statsTalkGroups}',
+          color: Colors.blue,
+        ),
+        const SizedBox(width: 8),
+        _DetailChip(
+          icon: Icons.person,
+          label: '$privates ${l10n.statsPrivateContacts}',
+          color: Colors.green,
+        ),
+      ],
+    );
   }
 
   @override
@@ -128,6 +171,7 @@ class DashboardScreen extends ConsumerWidget {
                 label: l10n.channels,
                 value: codeplug.channels.length.toString(),
                 helpText: l10n.helpChannel,
+                details: _buildChannelDetails(codeplug, l10n),
               ),
               _StatCard(
                 icon: Icons.folder,
@@ -140,6 +184,7 @@ class DashboardScreen extends ConsumerWidget {
                 label: l10n.contacts,
                 value: codeplug.contacts.length.toString(),
                 helpText: l10n.helpContact,
+                details: _buildContactDetails(codeplug, l10n),
               ),
             ],
           ),
@@ -189,12 +234,14 @@ class _StatCard extends StatelessWidget {
     required this.label,
     required this.value,
     required this.helpText,
+    this.details,
   });
 
   final IconData icon;
   final String label;
   final String value;
   final String helpText;
+  final Widget? details;
 
   @override
   Widget build(BuildContext context) => Card(
@@ -220,6 +267,10 @@ class _StatCard extends StatelessWidget {
                   HelpTooltip(message: helpText, iconSize: 14),
                 ],
               ),
+              if (details != null) ...[
+                const SizedBox(height: 8),
+                details!,
+              ],
             ],
           ),
         ),
@@ -251,6 +302,38 @@ class _SettingRow extends StatelessWidget {
             HelpTooltip(message: helpText, iconSize: 14),
             const SizedBox(width: 8),
             Text(value),
+          ],
+        ),
+      );
+}
+
+class _DetailChip extends StatelessWidget {
+  const _DetailChip({
+    required this.icon,
+    required this.label,
+    required this.color,
+  });
+
+  final IconData icon;
+  final String label;
+  final Color color;
+
+  @override
+  Widget build(BuildContext context) => Container(
+        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+        decoration: BoxDecoration(
+          color: color.withValues(alpha: 0.1),
+          borderRadius: BorderRadius.circular(12),
+        ),
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Icon(icon, size: 12, color: color),
+            const SizedBox(width: 4),
+            Text(
+              label,
+              style: TextStyle(fontSize: 11, color: color),
+            ),
           ],
         ),
       );
