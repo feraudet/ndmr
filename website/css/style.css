@@ -190,6 +190,115 @@ img {
     }
 }
 
+/* Language Selector */
+.lang-selector {
+    position: relative;
+    margin-left: 0.5rem;
+}
+
+.lang-current {
+    display: flex;
+    align-items: center;
+    gap: 0.375rem;
+    padding: 0.5rem 0.75rem;
+    background: transparent;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--color-text-muted);
+    cursor: pointer;
+    transition: all var(--transition);
+}
+
+.lang-current:hover {
+    background: var(--color-bg-alt);
+    border-color: var(--color-text-light);
+    color: var(--color-text);
+}
+
+.lang-current .flag {
+    font-size: 1rem;
+}
+
+.lang-dropdown {
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    right: 0;
+    min-width: 140px;
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-8px);
+    transition: all var(--transition);
+    z-index: 200;
+    overflow: hidden;
+}
+
+.lang-selector.open .lang-dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.lang-option {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    width: 100%;
+    padding: 0.625rem 1rem;
+    background: transparent;
+    border: none;
+    font-size: 0.875rem;
+    color: var(--color-text);
+    cursor: pointer;
+    transition: background var(--transition);
+    text-align: left;
+}
+
+.lang-option:hover {
+    background: var(--color-bg-alt);
+}
+
+.lang-option.active {
+    background: rgba(99, 102, 241, 0.1);
+    color: var(--color-primary);
+    font-weight: 500;
+}
+
+.lang-option .flag {
+    font-size: 1.125rem;
+}
+
+@media (max-width: 768px) {
+    .lang-selector {
+        position: fixed;
+        bottom: 1rem;
+        right: 1rem;
+        margin-left: 0;
+        z-index: 50;
+    }
+
+    .lang-current {
+        background: var(--color-bg-card);
+        box-shadow: var(--shadow-md);
+        padding: 0.75rem 1rem;
+    }
+
+    .lang-dropdown {
+        bottom: calc(100% + 0.5rem);
+        top: auto;
+        transform: translateY(8px);
+    }
+
+    .lang-selector.open .lang-dropdown {
+        transform: translateY(0);
+    }
+}
+
 /* ============================================
    Hero Section
    ============================================ */
