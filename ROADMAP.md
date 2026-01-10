@@ -1,6 +1,6 @@
 # Roadmap Ndmr
 
-> Dernière mise à jour : 2026-01-10
+> Dernière mise à jour : 10 Janvier 2026
 
 ## Vision
 
@@ -8,7 +8,16 @@ Créer un éditeur de codeplug DMR moderne, multiplateforme et accessible aux d�
 
 ## Étapes de développement
 
-### Phase 1 - Fondations (En cours)
+### Phase 0 - Site Web (Terminé)
+
+- [x] **Feature** Site vitrine statique (landing page moderne)
+- [x] **Feature** Infrastructure AWS (S3 + CloudFront + ACM)
+- [x] **Feature** Design responsive avec thème clair/sombre automatique
+- [x] **Feature** Support multilingue (7 langues : FR, EN, ES, PT, IT, DE, UK)
+- [x] **Feature** Détection automatique de la langue (URL > localStorage > navigateur)
+- [x] **Feature** Sélecteur de langue dans la navigation
+
+### Phase 1 - Fondations (Terminé)
 
 - [x] **Feature** Structure Flutter avec Riverpod et Freezed
 - [x] **Feature** Modèles de données (Channel, Zone, Contact, ScanList, RadioSettings, Codeplug)
@@ -22,7 +31,7 @@ Créer un éditeur de codeplug DMR moderne, multiplateforme et accessible aux d�
 - [x] **Docs** Tooltips d'aide pour les termes techniques DMR
 - [x] **Fix** Compléter l'ouverture de fichier depuis le dashboard
 
-### Phase 2 - Améliorations UX
+### Phase 2 - Améliorations UX (Terminé)
 
 - [x] **Feature** Assistant de première configuration (wizard)
 - [x] **Feature** Import/export CSV pour les canaux
@@ -71,6 +80,12 @@ Créer un éditeur de codeplug DMR moderne, multiplateforme et accessible aux d�
 - [x] **Feature** Confirmation avant fermeture si modifications non sauvegardées
 
 ## Historique des versions
+
+### Site Web - 2026-01-10
+- Site vitrine statique pour ndmr.app
+- Infrastructure AWS (Terraform : S3 + CloudFront + ACM)
+- Support multilingue (7 langues) avec détection automatique
+- Design responsive avec thème clair/sombre
 
 ### v0.11.0 - 2026-01-10
 - Persistance de la langue (SharedPreferences)
