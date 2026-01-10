@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ndmr - Programmez votre radio DMR facilement. Logiciel moderne et multiplateforme pour Anytone, TYT, Radioddity et plus.">
+    <meta name="keywords" content="DMR, codeplug, radio amateur, Anytone, AT-D878UV, programmation radio">
+    <meta name="author" content="Ndmr Project">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Ndmr - Programmation DMR simplifiée">
+    <meta property="og:description" content="Logiciel moderne pour programmer vos radios DMR. Multiplateforme, intuitif, gratuit.">
+    <meta property="og:image" content="https://ndmr.app/img/og-image.png">
+    <meta property="og:url" content="https://ndmr.app">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Ndmr - Programmation DMR simplifiée">
+    <meta name="twitter:description" content="Logiciel moderne pour programmer vos radios DMR.">
+
+    <title>Ndmr - Programmation DMR simplifiée</title>
+
+    <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="/" class="nav-logo">
+                <svg class="logo-icon" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="32" height="32" rx="8" fill="currentColor"/>
+                    <path d="M8 10h4v12H8V10zm6 0h4l4 12h-4l-4-12zm6 0h4v12h-4V10z" fill="white"/>
+                </svg>
+                <span>Ndmr</span>
+            </a>
+            <div class="nav-links">
+                <a href="#features">Fonctionnalités</a>
+                <a href="#screenshots">Aperçu</a>
+                <a href="#download">Télécharger</a>
+                <a href="https://github.com/feraudet/ndmr" target="_blank" rel="noopener" class="nav-github">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                    </svg>
+                </a>
+            </div>
+            <button class="nav-toggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-bg"></div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="badge-dot"></span>
+                    Version 0.11.0 disponible
+                </div>
+                <h1 class="hero-title">
+                    Programmez votre radio DMR<br>
+                    <span class="gradient-text">simplement</span>
+                </h1>
+                <p class="hero-description">
+                    Ndmr est un logiciel moderne et gratuit pour créer et éditer
+                    vos codeplugs DMR. Multiplateforme, intuitif, pensé pour les
+                    radioamateurs débutants comme experts.
+                </p>
+                <div class="hero-actions">
+                    <a href="#download" class="btn btn-primary">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                            <polyline points="7 10 12 15 17 10"/>
+                            <line x1="12" y1="15" x2="12" y2="3"/>
+                        </svg>
+                        Télécharger
+                    </a>
+                    <a href="https://github.com/feraudet/ndmr" target="_blank" rel="noopener" class="btn btn-secondary">
+                        Voir sur GitHub
+                    </a>
+                </div>
+                <div class="hero-platforms">
+                    <span>Disponible sur</span>
+                    <div class="platforms-icons">
+                        <div class="platform" title="Windows">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-12.9-1.801"/></svg>
+                        </div>
+                        <div class="platform" title="macOS">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                        </div>
+                        <div class="platform" title="Linux">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.504 0c-.155 0-.311.001-.465.003-.653.014-1.298.106-1.923.295-1.253.378-2.391 1.108-3.263 2.068-.874.962-1.486 2.148-1.793 3.424-.154.641-.233 1.3-.238 1.96-.004.548.027 1.097.104 1.64.076.545.199 1.084.366 1.607.168.524.38 1.032.634 1.516.254.484.55.944.884 1.374.334.43.706.828 1.112 1.19.406.362.846.687 1.313.971.467.283.962.524 1.477.72.516.195 1.05.346 1.596.449.546.103 1.105.158 1.666.166h.117c.561-.008 1.12-.063 1.666-.166.546-.103 1.08-.254 1.596-.449.515-.196 1.01-.437 1.477-.72.467-.284.907-.609 1.313-.971.406-.362.778-.76 1.112-1.19.334-.43.63-.89.884-1.374.254-.484.466-.992.634-1.516.167-.523.29-1.062.366-1.607.077-.543.108-1.092.104-1.64-.005-.66-.084-1.319-.238-1.96-.307-1.276-.919-2.462-1.793-3.424-.872-.96-2.01-1.69-3.263-2.068-.625-.189-1.27-.281-1.923-.295-.154-.002-.31-.003-.465-.003zm-.004 1.127c.135 0 .27.001.404.003.563.012 1.12.093 1.656.256 1.073.324 2.047.95 2.796 1.774.75.825 1.277 1.84 1.544 2.934.133.547.2 1.11.204 1.674.003.468-.023.937-.088 1.401-.065.467-.17.928-.316 1.376-.145.449-.328.883-.546 1.297-.218.414-.472.807-.758 1.173-.286.367-.604.707-.95 1.015-.347.309-.722.586-1.12.828-.399.241-.821.447-1.261.615-.44.166-.897.295-1.364.384-.467.088-.947.135-1.428.141h-.1c-.481-.006-.961-.053-1.428-.141-.467-.089-.924-.218-1.364-.384-.44-.168-.862-.374-1.261-.615-.398-.242-.773-.519-1.12-.828-.346-.308-.664-.648-.95-1.015-.286-.366-.54-.759-.758-1.173-.218-.414-.401-.848-.546-1.297-.146-.448-.251-.909-.316-1.376-.065-.464-.091-.933-.088-1.401.004-.564.071-1.127.204-1.674.267-1.094.794-2.109 1.544-2.934.749-.824 1.723-1.45 2.796-1.774.536-.163 1.093-.244 1.656-.256.134-.002.269-.003.404-.003z"/></svg>
+                        </div>
+                        <div class="platform" title="Android">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.523 15.341c-.5 0-.905.405-.905.904 0 .5.405.905.905.905s.904-.405.904-.905c0-.5-.404-.904-.904-.904m-11.046 0c-.5 0-.904.405-.904.904 0 .5.404.905.904.905s.905-.405.905-.905c0-.5-.405-.904-.905-.904M17.991 8.067l1.604-2.78c.089-.154.036-.35-.118-.439-.154-.089-.35-.035-.439.118l-1.624 2.814c-1.274-.581-2.703-.896-4.414-.896s-3.14.315-4.414.896L6.962 4.966c-.089-.153-.285-.207-.439-.118-.154.089-.207.285-.118.439l1.604 2.78c-2.841 1.546-4.735 4.395-5.009 7.747h19c-.274-3.352-2.168-6.201-5.009-7.747"/></svg>
+                        </div>
+                        <div class="platform" title="iOS">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="app-preview">
+                    <div class="preview-window">
+                        <div class="window-header">
+                            <div class="window-dots">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                            <div class="window-title">Ndmr</div>
+                        </div>
+                        <div class="window-content">
+                            <div class="app-sidebar">
+                                <div class="sidebar-item active"></div>
+                                <div class="sidebar-item"></div>
+                                <div class="sidebar-item"></div>
+                                <div class="sidebar-item"></div>
+                                <div class="sidebar-item"></div>
+                            </div>
+                            <div class="app-main">
+                                <div class="app-card"></div>
+                                <div class="app-card"></div>
+                                <div class="app-list">
+                                    <div class="list-item"></div>
+                                    <div class="list-item"></div>
+                                    <div class="list-item"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2>Tout ce dont vous avez besoin</h2>
+                <p>Ndmr regroupe tous les outils pour programmer votre radio DMR efficacement</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                            <path d="M2 17l10 5 10-5"/>
+                            <path d="M2 12l10 5 10-5"/>
+                        </svg>
+                    </div>
+                    <h3>Multiplateforme</h3>
+                    <p>Windows, macOS, Linux, Android et iOS. Utilisez Ndmr sur tous vos appareils.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M12 6v6l4 2"/>
+                        </svg>
+                    </div>
+                    <h3>Interface intuitive</h3>
+                    <p>Conçue pour les débutants avec des tooltips explicatifs pour chaque paramètre DMR.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                            <polyline points="17 8 12 3 7 8"/>
+                            <line x1="12" y1="3" x2="12" y2="15"/>
+                        </svg>
+                    </div>
+                    <h3>Import Repeaterbook</h3>
+                    <p>Importez les relais DMR directement depuis Repeaterbook.com en quelques clics.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                            <polyline points="14 2 14 8 20 8"/>
+                            <line x1="16" y1="13" x2="8" y2="13"/>
+                            <line x1="16" y1="17" x2="8" y2="17"/>
+                        </svg>
+                    </div>
+                    <h3>Export multiformats</h3>
+                    <p>Exportez en CSV, PDF ou format natif. Compatible avec les fichiers qdmr (.yaml).</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="9 11 12 14 22 4"/>
+                            <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+                        </svg>
+                    </div>
+                    <h3>Validation intelligente</h3>
+                    <p>Détection automatique des erreurs et incohérences avant l'export vers la radio.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707"/>
+                            <circle cx="12" cy="12" r="4"/>
+                        </svg>
+                    </div>
+                    <h3>Thèmes clair/sombre</h3>
+                    <p>Interface adaptative avec thème automatique selon vos préférences système.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Screenshots Section -->
+    <section id="screenshots" class="screenshots">
+        <div class="container">
+            <div class="section-header">
+                <h2>Découvrez l'interface</h2>
+                <p>Une interface moderne et épurée pour une expérience utilisateur optimale</p>
+            </div>
+            <div class="screenshots-showcase">
+                <div class="screenshot-card active" data-index="0">
+                    <div class="screenshot-preview">
+                        <div class="screenshot-placeholder">
+                            <div class="placeholder-header">
+                                <span>Dashboard</span>
+                            </div>
+                            <div class="placeholder-stats">
+                                <div class="stat-card"></div>
+                                <div class="stat-card"></div>
+                                <div class="stat-card"></div>
+                                <div class="stat-card"></div>
+                            </div>
+                            <div class="placeholder-content"></div>
+                        </div>
+                    </div>
+                    <h4>Dashboard</h4>
+                    <p>Vue d'ensemble de votre codeplug avec statistiques</p>
+                </div>
+                <div class="screenshot-card" data-index="1">
+                    <div class="screenshot-preview">
+                        <div class="screenshot-placeholder channels">
+                            <div class="placeholder-header">
+                                <span>Canaux</span>
+                            </div>
+                            <div class="placeholder-list">
+                                <div class="list-row"></div>
+                                <div class="list-row"></div>
+                                <div class="list-row"></div>
+                                <div class="list-row"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <h4>Gestion des canaux</h4>
+                    <p>Créez et organisez vos canaux DMR facilement</p>
+                </div>
+                <div class="screenshot-card" data-index="2">
+                    <div class="screenshot-preview">
+                        <div class="screenshot-placeholder zones">
+                            <div class="placeholder-header">
+                                <span>Zones</span>
+                            </div>
+                            <div class="placeholder-grid">
+                                <div class="zone-card"></div>
+                                <div class="zone-card"></div>
+                                <div class="zone-card"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <h4>Organisation par zones</h4>
+                    <p>Regroupez vos canaux par zone géographique</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Radios Section -->
+    <section class="radios">
+        <div class="container">
+            <div class="section-header">
+                <h2>Radios supportées</h2>
+                <p>Ndmr supporte les radios DMR les plus populaires</p>
+            </div>
+            <div class="radios-grid">
+                <div class="radio-card supported">
+                    <div class="radio-status">Supporté</div>
+                    <h4>Anytone AT-D878UV</h4>
+                    <p>Support complet avec toutes les fonctionnalités</p>
+                </div>
+                <div class="radio-card coming">
+                    <div class="radio-status">Bientôt</div>
+                    <h4>OpenGD77 / OpenRTX</h4>
+                    <p>Support prévu pour les firmwares open-source</p>
+                </div>
+                <div class="radio-card coming">
+                    <div class="radio-status">Bientôt</div>
+                    <h4>TYT MD-UV380/390</h4>
+                    <p>Support prévu dans une prochaine version</p>
+                </div>
+                <div class="radio-card coming">
+                    <div class="radio-status">Bientôt</div>
+                    <h4>Radioddity GD-77</h4>
+                    <p>Support prévu dans une prochaine version</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download Section -->
+    <section id="download" class="download">
+        <div class="container">
+            <div class="download-content">
+                <h2>Prêt à programmer votre radio ?</h2>
+                <p>Téléchargez Ndmr gratuitement et commencez à créer votre codeplug en quelques minutes.</p>
+                <div class="download-buttons">
+                    <a href="https://github.com/feraudet/ndmr/releases/latest" class="btn btn-download">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-12.9-1.801"/>
+                        </svg>
+                        <div>
+                            <span class="dl-label">Télécharger pour</span>
+                            <span class="dl-platform">Windows</span>
+                        </div>
+                    </a>
+                    <a href="https://github.com/feraudet/ndmr/releases/latest" class="btn btn-download">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+                        </svg>
+                        <div>
+                            <span class="dl-label">Télécharger pour</span>
+                            <span class="dl-platform">macOS</span>
+                        </div>
+                    </a>
+                    <a href="https://github.com/feraudet/ndmr/releases/latest" class="btn btn-download">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12.504 0c-.155 0-.311.001-.465.003-.653.014-1.298.106-1.923.295-1.253.378-2.391 1.108-3.263 2.068-.874.962-1.486 2.148-1.793 3.424-.154.641-.233 1.3-.238 1.96-.004.548.027 1.097.104 1.64.076.545.199 1.084.366 1.607.168.524.38 1.032.634 1.516.254.484.55.944.884 1.374.334.43.706.828 1.112 1.19.406.362.846.687 1.313.971.467.283.962.524 1.477.72.516.195 1.05.346 1.596.449.546.103 1.105.158 1.666.166h.117c.561-.008 1.12-.063 1.666-.166.546-.103 1.08-.254 1.596-.449.515-.196 1.01-.437 1.477-.72.467-.284.907-.609 1.313-.971.406-.362.778-.76 1.112-1.19.334-.43.63-.89.884-1.374.254-.484.466-.992.634-1.516.167-.523.29-1.062.366-1.607.077-.543.108-1.092.104-1.64-.005-.66-.084-1.319-.238-1.96-.307-1.276-.919-2.462-1.793-3.424-.872-.96-2.01-1.69-3.263-2.068-.625-.189-1.27-.281-1.923-.295-.154-.002-.31-.003-.465-.003z"/>
+                        </svg>
+                        <div>
+                            <span class="dl-label">Télécharger pour</span>
+                            <span class="dl-platform">Linux</span>
+                        </div>
+                    </a>
+                </div>
+                <p class="download-note">
+                    Version 0.11.0 &middot; Gratuit et open-source &middot;
+                    <a href="https://github.com/feraudet/ndmr/releases">Voir toutes les versions</a>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="/" class="footer-logo">
+                        <svg class="logo-icon" viewBox="0 0 32 32" fill="none">
+                            <rect width="32" height="32" rx="8" fill="currentColor"/>
+                            <path d="M8 10h4v12H8V10zm6 0h4l4 12h-4l-4-12zm6 0h4v12h-4V10z" fill="white"/>
+                        </svg>
+                        <span>Ndmr</span>
+                    </a>
+                    <p>Programmation DMR simplifiée pour tous les radioamateurs.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Ressources</h4>
+                        <a href="https://github.com/feraudet/ndmr">Code source</a>
+                        <a href="https://github.com/feraudet/ndmr/releases">Versions</a>
+                        <a href="https://github.com/feraudet/ndmr/issues">Signaler un bug</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Communauté</h4>
+                        <a href="https://radioid.net" target="_blank" rel="noopener">RadioID.net</a>
+                        <a href="https://repeaterbook.com" target="_blank" rel="noopener">Repeaterbook</a>
+                        <a href="https://brandmeister.network" target="_blank" rel="noopener">BrandMeister</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Ndmr Project. Open-source sous licence MIT.</p>
+                <p class="footer-credits">Inspiré par <a href="https://github.com/hmatuschek/qdmr" target="_blank" rel="noopener">qdmr</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
