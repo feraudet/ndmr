@@ -31,6 +31,31 @@
 
 ---
 
+### 10 Janvier 2026 - v0.12.0
+
+**Sprint L** - Carte interactive des relais
+
+#### Fonctionnalités
+
+| Fonctionnalité | Description |
+|----------------|-------------|
+| Carte OpenStreetMap | Affichage des relais DMR sur une carte interactive |
+| Marqueurs colorés | Vert = actif, gris = hors service |
+| Sélection pays | Filtrage des relais par pays |
+| Fiche relais | Détails au clic (fréquence, CC, DMR ID, notes) |
+| Import direct | Ajout du relais comme canal en un clic |
+| Géolocalisation | Centrage automatique sur la position de l'utilisateur |
+| Navigation | Nouvel onglet Carte avec raccourci Cmd/Ctrl+6 |
+
+#### Fichiers clés
+
+| Élément | Fichier |
+|---------|---------|
+| Écran carte | `lib/features/codeplug/presentation/screens/repeater_map_screen.dart` |
+| Service Repeaterbook | `lib/features/codeplug/data/services/repeaterbook_service.dart` |
+
+---
+
 ### 10 Janvier 2026 - v0.11.0
 
 **Sprint K** - Persistance langue et confirmation fermeture
@@ -211,8 +236,9 @@ timeline
                : v0.10.0 Persistance thème
                : v0.11.0 Persistance langue
                : Site web multilingue
+               : v0.12.0 Carte des relais
 ```
 
 ---
 
-*Dernière mise à jour : 10 Janvier 2026 (Site web ndmr.app avec support 7 langues)*
+*Dernière mise à jour : 10 Janvier 2026 (v0.12.0 - Carte interactive des relais avec géolocalisation)*
