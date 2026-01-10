@@ -1,0 +1,12 @@
+# Terraform/OpenTofu
+.terraform/
+*.tfstate
+*.tfstate.*
+terraform.tfvars
+tfplan
+*.tfplan
+*.zip
+
+# Python
+__pycache__/
+*.pyc

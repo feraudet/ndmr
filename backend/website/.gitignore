@@ -1,0 +1,10 @@
+# Terraform/OpenTofu
+.terraform/
+*.tfstate
+*.tfstate.*
+terraform.tfvars
+tfplan
+*.tfplan
+
+# Lock file (optional, can be committed for reproducibility)
+# .terraform.lock.hcl
