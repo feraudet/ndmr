@@ -31,6 +31,33 @@
 
 ---
 
+### 10 Janvier 2026 - v0.13.0
+
+**Sprint M** - Synchronisation cloud
+
+#### Fonctionnalités
+
+| Fonctionnalité | Description |
+|----------------|-------------|
+| Backend FastAPI | API serverless avec AWS Lambda + DynamoDB |
+| Authentification | Inscription, connexion, refresh JWT |
+| Endpoints CRUD | Création, lecture, mise à jour, suppression de codeplugs |
+| Service sync | Gestion des conflits par version |
+| Écran Cloud | Liste des codeplugs avec actions sync |
+| Écran Login | Formulaire inscription/connexion |
+| Navigation | Nouvel onglet Cloud avec raccourci Cmd/Ctrl+7 |
+
+#### Fichiers clés
+
+| Élément | Fichier |
+|---------|---------|
+| Backend API | `backend/app/main.py` |
+| Auth service | `lib/features/cloud/data/services/auth_service.dart` |
+| Sync service | `lib/features/cloud/data/services/sync_service.dart` |
+| Cloud screen | `lib/features/cloud/presentation/screens/cloud_screen.dart` |
+
+---
+
 ### 10 Janvier 2026 - v0.12.0
 
 **Sprint L** - Carte interactive des relais
@@ -237,8 +264,9 @@ timeline
                : v0.11.0 Persistance langue
                : Site web multilingue
                : v0.12.0 Carte des relais
+               : v0.13.0 Sync cloud
 ```
 
 ---
 
-*Dernière mise à jour : 10 Janvier 2026 (v0.12.0 - Carte interactive des relais avec géolocalisation)*
+*Dernière mise à jour : 10 Janvier 2026 (v0.13.0 - Synchronisation cloud des codeplugs)*

@@ -62,7 +62,7 @@ Créer un éditeur de codeplug DMR moderne, multiplateforme et accessible aux d�
 ### Idées et améliorations futures
 
 - [x] **Feature** Carte des relais avec géolocalisation
-- [ ] **Feature** Synchronisation cloud des codeplugs
+- [x] **Feature** Synchronisation cloud des codeplugs
 - [ ] **Feature** Mode hors-ligne complet sur mobile
 - [ ] **Feature** Thèmes personnalisables
 - [x] **Feature** Duplication de contacts/zones
@@ -80,6 +80,15 @@ Créer un éditeur de codeplug DMR moderne, multiplateforme et accessible aux d�
 - [x] **Feature** Confirmation avant fermeture si modifications non sauvegardées
 
 ## Historique des versions
+
+### v0.13.0 - 2026-01-10
+- Synchronisation cloud des codeplugs
+- Backend FastAPI avec AWS Lambda + DynamoDB
+- Authentification JWT (inscription, connexion, refresh)
+- Écran Cloud avec liste des codeplugs distants
+- Sauvegarde et chargement depuis le cloud
+- Suppression des codeplugs cloud
+- Nouvel onglet Cloud avec raccourci Cmd/Ctrl+7
 
 ### v0.12.0 - 2026-01-10
 - Carte interactive des relais DMR (OpenStreetMap)
