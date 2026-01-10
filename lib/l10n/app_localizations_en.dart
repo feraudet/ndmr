@@ -603,4 +603,87 @@ class L10nEn extends L10n {
   String repeaterImported(String name) {
     return '$name imported as channel';
   }
+
+  @override
+  String get navCloud => 'Cloud';
+
+  @override
+  String get cloudSyncTitle => 'Ndmr Cloud';
+
+  @override
+  String get cloudSyncSubtitle => 'Sync your codeplugs across all your devices';
+
+  @override
+  String get cloudLogin => 'Sign In';
+
+  @override
+  String get cloudRegister => 'Create Account';
+
+  @override
+  String get cloudLogout => 'Sign Out';
+
+  @override
+  String get cloudEmail => 'Email';
+
+  @override
+  String get cloudPassword => 'Password';
+
+  @override
+  String get cloudInvalidEmail => 'Invalid email address';
+
+  @override
+  String get cloudPasswordTooShort => 'Password must be at least 8 characters';
+
+  @override
+  String get cloudCallsignOptional => 'Optional - your amateur radio callsign';
+
+  @override
+  String get cloudNoAccount => 'Don\'t have an account? Sign up';
+
+  @override
+  String get cloudAlreadyHaveAccount => 'Already have an account? Sign in';
+
+  @override
+  String get cloudMyCodeplugs => 'My Codeplugs';
+
+  @override
+  String get cloudNoCodeplugs => 'No cloud codeplugs yet';
+
+  @override
+  String get cloudNoCodeplugsHint =>
+      'Save a codeplug to the cloud to sync across devices';
+
+  @override
+  String get cloudSaveToCloud => 'Save to Cloud';
+
+  @override
+  String get cloudLoadFromCloud => 'Load from Cloud';
+
+  @override
+  String get cloudSyncing => 'Syncing...';
+
+  @override
+  String get cloudSyncSuccess => 'Sync successful';
+
+  @override
+  String get cloudSyncError => 'Sync failed';
+
+  @override
+  String get cloudDelete => 'Delete from Cloud';
+
+  @override
+  String cloudDeleteConfirm(String name) {
+    return 'Delete \"$name\" from cloud?';
+  }
+
+  @override
+  String cloudLastSync(String date) {
+    return 'Last synced: $date';
+  }
+
+  @override
+  String get cloudNotLoggedIn => 'Sign in to sync your codeplugs';
+
+  @override
+  String get cloudSignInToSync => 'Sign In to Sync';
 }

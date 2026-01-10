@@ -19,6 +19,7 @@ import 'scan_lists_screen.dart';
 import 'settings_screen.dart';
 import 'zones_screen.dart';
 import '../widgets/repeaterbook_import_dialog.dart';
+import '../../../cloud/presentation/screens/cloud_screen.dart';
 
 class HomeScreen extends ConsumerStatefulWidget {
   const HomeScreen({super.key});
@@ -118,6 +119,11 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
           label: l10n.navMap,
         ),
         NavigationDestination(
+          icon: const Icon(Icons.cloud_outlined),
+          selectedIcon: const Icon(Icons.cloud),
+          label: l10n.navCloud,
+        ),
+        NavigationDestination(
           icon: const Icon(Icons.settings_outlined),
           selectedIcon: const Icon(Icons.settings),
           label: l10n.navSettings,
@@ -154,6 +160,11 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
           icon: const Icon(Icons.map_outlined),
           selectedIcon: const Icon(Icons.map),
           label: Text(l10n.navMap),
+        ),
+        NavigationRailDestination(
+          icon: const Icon(Icons.cloud_outlined),
+          selectedIcon: const Icon(Icons.cloud),
+          label: Text(l10n.navCloud),
         ),
         NavigationRailDestination(
           icon: const Icon(Icons.settings_outlined),
@@ -246,7 +257,8 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
       3 => const ContactsScreen(),
       4 => const ScanListsScreen(),
       5 => const RepeaterMapScreen(),
-      6 => const SettingsScreen(),
+      6 => const CloudScreen(),
+      7 => const SettingsScreen(),
       _ => const DashboardScreen(),
     };
   }
@@ -406,6 +418,10 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
             setState(() => _selectedIndex = 6),
         const SingleActivator(LogicalKeyboardKey.digit7, control: true): () =>
             setState(() => _selectedIndex = 6),
+        const SingleActivator(LogicalKeyboardKey.digit8, meta: true): () =>
+            setState(() => _selectedIndex = 7),
+        const SingleActivator(LogicalKeyboardKey.digit8, control: true): () =>
+            setState(() => _selectedIndex = 7),
       },
       child: Focus(
         autofocus: true,

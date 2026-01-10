@@ -1,0 +1,23 @@
+version = 0.1
+
+[default.deploy.parameters]
+stack_name = "ndmr-api"
+resolve_s3 = true
+s3_prefix = "ndmr-api"
+region = "eu-west-3"
+confirm_changeset = true
+capabilities = "CAPABILITY_IAM"
+parameter_overrides = "Environment=\"production\""
+
+[default.build.parameters]
+cached = true
+parallel = true
+
+[dev.deploy.parameters]
+stack_name = "ndmr-api-dev"
+resolve_s3 = true
+s3_prefix = "ndmr-api-dev"
+region = "eu-west-3"
+confirm_changeset = false
+capabilities = "CAPABILITY_IAM"
+parameter_overrides = "Environment=\"development\""

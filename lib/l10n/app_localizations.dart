@@ -1194,6 +1194,162 @@ abstract class L10n {
   /// In fr, this message translates to:
   /// **'{name} importé comme canal'**
   String repeaterImported(String name);
+
+  /// No description provided for @navCloud.
+  ///
+  /// In fr, this message translates to:
+  /// **'Cloud'**
+  String get navCloud;
+
+  /// No description provided for @cloudSyncTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Ndmr Cloud'**
+  String get cloudSyncTitle;
+
+  /// No description provided for @cloudSyncSubtitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Synchronisez vos codeplugs sur tous vos appareils'**
+  String get cloudSyncSubtitle;
+
+  /// No description provided for @cloudLogin.
+  ///
+  /// In fr, this message translates to:
+  /// **'Se connecter'**
+  String get cloudLogin;
+
+  /// No description provided for @cloudRegister.
+  ///
+  /// In fr, this message translates to:
+  /// **'Créer un compte'**
+  String get cloudRegister;
+
+  /// No description provided for @cloudLogout.
+  ///
+  /// In fr, this message translates to:
+  /// **'Se déconnecter'**
+  String get cloudLogout;
+
+  /// No description provided for @cloudEmail.
+  ///
+  /// In fr, this message translates to:
+  /// **'Email'**
+  String get cloudEmail;
+
+  /// No description provided for @cloudPassword.
+  ///
+  /// In fr, this message translates to:
+  /// **'Mot de passe'**
+  String get cloudPassword;
+
+  /// No description provided for @cloudInvalidEmail.
+  ///
+  /// In fr, this message translates to:
+  /// **'Adresse email invalide'**
+  String get cloudInvalidEmail;
+
+  /// No description provided for @cloudPasswordTooShort.
+  ///
+  /// In fr, this message translates to:
+  /// **'Le mot de passe doit contenir au moins 8 caractères'**
+  String get cloudPasswordTooShort;
+
+  /// No description provided for @cloudCallsignOptional.
+  ///
+  /// In fr, this message translates to:
+  /// **'Optionnel - votre indicatif radioamateur'**
+  String get cloudCallsignOptional;
+
+  /// No description provided for @cloudNoAccount.
+  ///
+  /// In fr, this message translates to:
+  /// **'Pas de compte ? Inscrivez-vous'**
+  String get cloudNoAccount;
+
+  /// No description provided for @cloudAlreadyHaveAccount.
+  ///
+  /// In fr, this message translates to:
+  /// **'Déjà un compte ? Connectez-vous'**
+  String get cloudAlreadyHaveAccount;
+
+  /// No description provided for @cloudMyCodeplugs.
+  ///
+  /// In fr, this message translates to:
+  /// **'Mes codeplugs'**
+  String get cloudMyCodeplugs;
+
+  /// No description provided for @cloudNoCodeplugs.
+  ///
+  /// In fr, this message translates to:
+  /// **'Aucun codeplug dans le cloud'**
+  String get cloudNoCodeplugs;
+
+  /// No description provided for @cloudNoCodeplugsHint.
+  ///
+  /// In fr, this message translates to:
+  /// **'Sauvegardez un codeplug dans le cloud pour le synchroniser'**
+  String get cloudNoCodeplugsHint;
+
+  /// No description provided for @cloudSaveToCloud.
+  ///
+  /// In fr, this message translates to:
+  /// **'Sauvegarder dans le cloud'**
+  String get cloudSaveToCloud;
+
+  /// No description provided for @cloudLoadFromCloud.
+  ///
+  /// In fr, this message translates to:
+  /// **'Charger depuis le cloud'**
+  String get cloudLoadFromCloud;
+
+  /// No description provided for @cloudSyncing.
+  ///
+  /// In fr, this message translates to:
+  /// **'Synchronisation...'**
+  String get cloudSyncing;
+
+  /// No description provided for @cloudSyncSuccess.
+  ///
+  /// In fr, this message translates to:
+  /// **'Synchronisation réussie'**
+  String get cloudSyncSuccess;
+
+  /// No description provided for @cloudSyncError.
+  ///
+  /// In fr, this message translates to:
+  /// **'Échec de la synchronisation'**
+  String get cloudSyncError;
+
+  /// No description provided for @cloudDelete.
+  ///
+  /// In fr, this message translates to:
+  /// **'Supprimer du cloud'**
+  String get cloudDelete;
+
+  /// No description provided for @cloudDeleteConfirm.
+  ///
+  /// In fr, this message translates to:
+  /// **'Supprimer \"{name}\" du cloud ?'**
+  String cloudDeleteConfirm(String name);
+
+  /// No description provided for @cloudLastSync.
+  ///
+  /// In fr, this message translates to:
+  /// **'Dernière sync : {date}'**
+  String cloudLastSync(String date);
+
+  /// No description provided for @cloudNotLoggedIn.
+  ///
+  /// In fr, this message translates to:
+  /// **'Connectez-vous pour synchroniser vos codeplugs'**
+  String get cloudNotLoggedIn;
+
+  /// No description provided for @cloudSignInToSync.
+  ///
+  /// In fr, this message translates to:
+  /// **'Se connecter pour synchroniser'**
+  String get cloudSignInToSync;
 }
 
 class _L10nDelegate extends LocalizationsDelegate<L10n> {

@@ -608,4 +608,91 @@ class L10nFr extends L10n {
   String repeaterImported(String name) {
     return '$name importé comme canal';
   }
+
+  @override
+  String get navCloud => 'Cloud';
+
+  @override
+  String get cloudSyncTitle => 'Ndmr Cloud';
+
+  @override
+  String get cloudSyncSubtitle =>
+      'Synchronisez vos codeplugs sur tous vos appareils';
+
+  @override
+  String get cloudLogin => 'Se connecter';
+
+  @override
+  String get cloudRegister => 'Créer un compte';
+
+  @override
+  String get cloudLogout => 'Se déconnecter';
+
+  @override
+  String get cloudEmail => 'Email';
+
+  @override
+  String get cloudPassword => 'Mot de passe';
+
+  @override
+  String get cloudInvalidEmail => 'Adresse email invalide';
+
+  @override
+  String get cloudPasswordTooShort =>
+      'Le mot de passe doit contenir au moins 8 caractères';
+
+  @override
+  String get cloudCallsignOptional =>
+      'Optionnel - votre indicatif radioamateur';
+
+  @override
+  String get cloudNoAccount => 'Pas de compte ? Inscrivez-vous';
+
+  @override
+  String get cloudAlreadyHaveAccount => 'Déjà un compte ? Connectez-vous';
+
+  @override
+  String get cloudMyCodeplugs => 'Mes codeplugs';
+
+  @override
+  String get cloudNoCodeplugs => 'Aucun codeplug dans le cloud';
+
+  @override
+  String get cloudNoCodeplugsHint =>
+      'Sauvegardez un codeplug dans le cloud pour le synchroniser';
+
+  @override
+  String get cloudSaveToCloud => 'Sauvegarder dans le cloud';
+
+  @override
+  String get cloudLoadFromCloud => 'Charger depuis le cloud';
+
+  @override
+  String get cloudSyncing => 'Synchronisation...';
+
+  @override
+  String get cloudSyncSuccess => 'Synchronisation réussie';
+
+  @override
+  String get cloudSyncError => 'Échec de la synchronisation';
+
+  @override
+  String get cloudDelete => 'Supprimer du cloud';
+
+  @override
+  String cloudDeleteConfirm(String name) {
+    return 'Supprimer \"$name\" du cloud ?';
+  }
+
+  @override
+  String cloudLastSync(String date) {
+    return 'Dernière sync : $date';
+  }
+
+  @override
+  String get cloudNotLoggedIn =>
+      'Connectez-vous pour synchroniser vos codeplugs';
+
+  @override
+  String get cloudSignInToSync => 'Se connecter pour synchroniser';
 }

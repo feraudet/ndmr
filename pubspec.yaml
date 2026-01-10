@@ -53,6 +53,9 @@ dependencies:
   # Local storage for preferences
   shared_preferences: ^2.2.0
 
+  # Secure storage for tokens
+  flutter_secure_storage: ^9.2.0
+
   # Map for repeater visualization
   flutter_map: ^7.0.0
   latlong2: ^0.9.0

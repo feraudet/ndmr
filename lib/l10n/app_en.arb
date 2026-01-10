@@ -259,5 +259,42 @@
     "placeholders": {
       "name": {"type": "String"}
     }
-  }
+  },
+
+  "navCloud": "Cloud",
+  "cloudSyncTitle": "Ndmr Cloud",
+  "cloudSyncSubtitle": "Sync your codeplugs across all your devices",
+  "cloudLogin": "Sign In",
+  "cloudRegister": "Create Account",
+  "cloudLogout": "Sign Out",
+  "cloudEmail": "Email",
+  "cloudPassword": "Password",
+  "cloudInvalidEmail": "Invalid email address",
+  "cloudPasswordTooShort": "Password must be at least 8 characters",
+  "cloudCallsignOptional": "Optional - your amateur radio callsign",
+  "cloudNoAccount": "Don't have an account? Sign up",
+  "cloudAlreadyHaveAccount": "Already have an account? Sign in",
+  "cloudMyCodeplugs": "My Codeplugs",
+  "cloudNoCodeplugs": "No cloud codeplugs yet",
+  "cloudNoCodeplugsHint": "Save a codeplug to the cloud to sync across devices",
+  "cloudSaveToCloud": "Save to Cloud",
+  "cloudLoadFromCloud": "Load from Cloud",
+  "cloudSyncing": "Syncing...",
+  "cloudSyncSuccess": "Sync successful",
+  "cloudSyncError": "Sync failed",
+  "cloudDelete": "Delete from Cloud",
+  "cloudDeleteConfirm": "Delete \"{name}\" from cloud?",
+  "@cloudDeleteConfirm": {
+    "placeholders": {
+      "name": {"type": "String"}
+    }
+  },
+  "cloudLastSync": "Last synced: {date}",
+  "@cloudLastSync": {
+    "placeholders": {
+      "date": {"type": "String"}
+    }
+  },
+  "cloudNotLoggedIn": "Sign in to sync your codeplugs",
+  "cloudSignInToSync": "Sign In to Sync"
 }
