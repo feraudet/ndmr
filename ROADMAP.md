@@ -61,7 +61,7 @@ Créer un éditeur de codeplug DMR moderne, multiplateforme et accessible aux d�
 
 ### Idées et améliorations futures
 
-- [ ] **Feature** Carte des relais avec géolocalisation
+- [x] **Feature** Carte des relais avec géolocalisation
 - [ ] **Feature** Synchronisation cloud des codeplugs
 - [ ] **Feature** Mode hors-ligne complet sur mobile
 - [ ] **Feature** Thèmes personnalisables
@@ -80,6 +80,14 @@ Créer un éditeur de codeplug DMR moderne, multiplateforme et accessible aux d�
 - [x] **Feature** Confirmation avant fermeture si modifications non sauvegardées
 
 ## Historique des versions
+
+### v0.12.0 - 2026-01-10
+- Carte interactive des relais DMR (OpenStreetMap)
+- Marqueurs colorés (vert = actif, gris = hors service)
+- Sélection par pays et fiche détaillée au clic
+- Import direct d'un relais comme canal
+- Géolocalisation (centrage sur position utilisateur)
+- Nouvel onglet Carte avec raccourci Cmd/Ctrl+6
 
 ### Site Web - 2026-01-10
 - Site vitrine statique pour ndmr.app
