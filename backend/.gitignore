@@ -1,0 +1,23 @@
+# OpenTofu / Terraform
+infra/.terraform/
+infra/*.tfstate
+infra/*.tfstate.*
+infra/tfplan
+infra/.terraform.lock.hcl
+infra/terraform.tfvars
+
+# Lambda packaging
+layer/
+*.zip
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.env
+venv/
+.venv/
+
+# IDE
+.idea/
+.vscode/
