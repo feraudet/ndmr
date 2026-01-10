@@ -238,5 +238,26 @@
   "unsavedChangesMessage": "You have unsaved changes. Do you want to save before closing?",
   "discardChanges": "Discard",
   "saveAndClose": "Save & Close",
-  "dontClose": "Don't Close"
+  "dontClose": "Don't Close",
+
+  "navMap": "Map",
+  "mapNoCodeplug": "No configuration loaded",
+  "mapNoCodeplugHint": "Create or open a configuration to see repeaters on the map",
+  "mapCountry": "Country:",
+  "mapRepeaterCount": "{count} repeaters",
+  "@mapRepeaterCount": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+  "mapMyLocation": "My location",
+  "mapRefresh": "Refresh",
+  "mapOnAir": "On Air",
+  "mapImportRepeater": "Import",
+  "repeaterImported": "{name} imported as channel",
+  "@repeaterImported": {
+    "placeholders": {
+      "name": {"type": "String"}
+    }
+  }
 }

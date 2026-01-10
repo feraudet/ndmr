@@ -253,5 +253,26 @@
   "unsavedChangesMessage": "Vous avez des modifications non sauvegardées. Voulez-vous les sauvegarder avant de fermer ?",
   "discardChanges": "Abandonner",
   "saveAndClose": "Sauvegarder et fermer",
-  "dontClose": "Ne pas fermer"
+  "dontClose": "Ne pas fermer",
+
+  "navMap": "Carte",
+  "mapNoCodeplug": "Aucune configuration chargée",
+  "mapNoCodeplugHint": "Créez ou ouvrez une configuration pour voir les relais sur la carte",
+  "mapCountry": "Pays :",
+  "mapRepeaterCount": "{count} relais",
+  "@mapRepeaterCount": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+  "mapMyLocation": "Ma position",
+  "mapRefresh": "Actualiser",
+  "mapOnAir": "Actif",
+  "mapImportRepeater": "Importer",
+  "repeaterImported": "{name} importé comme canal",
+  "@repeaterImported": {
+    "placeholders": {
+      "name": {"type": "String"}
+    }
+  }
 }

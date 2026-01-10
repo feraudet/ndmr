@@ -1134,6 +1134,66 @@ abstract class L10n {
   /// In fr, this message translates to:
   /// **'Ne pas fermer'**
   String get dontClose;
+
+  /// No description provided for @navMap.
+  ///
+  /// In fr, this message translates to:
+  /// **'Carte'**
+  String get navMap;
+
+  /// No description provided for @mapNoCodeplug.
+  ///
+  /// In fr, this message translates to:
+  /// **'Aucune configuration chargée'**
+  String get mapNoCodeplug;
+
+  /// No description provided for @mapNoCodeplugHint.
+  ///
+  /// In fr, this message translates to:
+  /// **'Créez ou ouvrez une configuration pour voir les relais sur la carte'**
+  String get mapNoCodeplugHint;
+
+  /// No description provided for @mapCountry.
+  ///
+  /// In fr, this message translates to:
+  /// **'Pays :'**
+  String get mapCountry;
+
+  /// No description provided for @mapRepeaterCount.
+  ///
+  /// In fr, this message translates to:
+  /// **'{count} relais'**
+  String mapRepeaterCount(int count);
+
+  /// No description provided for @mapMyLocation.
+  ///
+  /// In fr, this message translates to:
+  /// **'Ma position'**
+  String get mapMyLocation;
+
+  /// No description provided for @mapRefresh.
+  ///
+  /// In fr, this message translates to:
+  /// **'Actualiser'**
+  String get mapRefresh;
+
+  /// No description provided for @mapOnAir.
+  ///
+  /// In fr, this message translates to:
+  /// **'Actif'**
+  String get mapOnAir;
+
+  /// No description provided for @mapImportRepeater.
+  ///
+  /// In fr, this message translates to:
+  /// **'Importer'**
+  String get mapImportRepeater;
+
+  /// No description provided for @repeaterImported.
+  ///
+  /// In fr, this message translates to:
+  /// **'{name} importé comme canal'**
+  String repeaterImported(String name);
 }
 
 class _L10nDelegate extends LocalizationsDelegate<L10n> {

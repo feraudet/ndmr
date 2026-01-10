@@ -573,4 +573,39 @@ class L10nFr extends L10n {
 
   @override
   String get dontClose => 'Ne pas fermer';
+
+  @override
+  String get navMap => 'Carte';
+
+  @override
+  String get mapNoCodeplug => 'Aucune configuration chargée';
+
+  @override
+  String get mapNoCodeplugHint =>
+      'Créez ou ouvrez une configuration pour voir les relais sur la carte';
+
+  @override
+  String get mapCountry => 'Pays :';
+
+  @override
+  String mapRepeaterCount(int count) {
+    return '$count relais';
+  }
+
+  @override
+  String get mapMyLocation => 'Ma position';
+
+  @override
+  String get mapRefresh => 'Actualiser';
+
+  @override
+  String get mapOnAir => 'Actif';
+
+  @override
+  String get mapImportRepeater => 'Importer';
+
+  @override
+  String repeaterImported(String name) {
+    return '$name importé comme canal';
+  }
 }

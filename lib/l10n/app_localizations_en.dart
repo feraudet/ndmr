@@ -568,4 +568,39 @@ class L10nEn extends L10n {
 
   @override
   String get dontClose => 'Don\'t Close';
+
+  @override
+  String get navMap => 'Map';
+
+  @override
+  String get mapNoCodeplug => 'No configuration loaded';
+
+  @override
+  String get mapNoCodeplugHint =>
+      'Create or open a configuration to see repeaters on the map';
+
+  @override
+  String get mapCountry => 'Country:';
+
+  @override
+  String mapRepeaterCount(int count) {
+    return '$count repeaters';
+  }
+
+  @override
+  String get mapMyLocation => 'My location';
+
+  @override
+  String get mapRefresh => 'Refresh';
+
+  @override
+  String get mapOnAir => 'On Air';
+
+  @override
+  String get mapImportRepeater => 'Import';
+
+  @override
+  String repeaterImported(String name) {
+    return '$name imported as channel';
+  }
 }

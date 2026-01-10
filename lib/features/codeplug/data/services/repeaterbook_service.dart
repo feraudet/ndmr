@@ -98,6 +98,8 @@ class Repeater {
   final String? dmrId;
   final String? notes;
   final String? status;
+  final double? latitude;
+  final double? longitude;
 
   Repeater({
     this.callsign,
@@ -110,6 +112,8 @@ class Repeater {
     this.dmrId,
     this.notes,
     this.status,
+    this.latitude,
+    this.longitude,
   });
 
   factory Repeater.fromJson(Map<String, dynamic> json) {
@@ -127,8 +131,13 @@ class Repeater {
       dmrId: json['DMR ID']?.toString(),
       notes: json['Notes'] as String?,
       status: json['Operational Status'] as String?,
+      latitude: double.tryParse(json['Lat']?.toString() ?? ''),
+      longitude: double.tryParse(json['Long']?.toString() ?? ''),
     );
   }
+
+  /// Check if this repeater has valid coordinates
+  bool get hasCoordinates => latitude != null && longitude != null;
 
   /// Convert to a Channel model
   Channel toChannel() {

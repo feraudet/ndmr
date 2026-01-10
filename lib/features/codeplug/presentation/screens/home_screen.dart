@@ -14,6 +14,7 @@ import '../providers/history_provider.dart';
 import 'channels_screen.dart';
 import 'contacts_screen.dart';
 import 'dashboard_screen.dart';
+import 'repeater_map_screen.dart';
 import 'scan_lists_screen.dart';
 import 'settings_screen.dart';
 import 'zones_screen.dart';
@@ -112,6 +113,11 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
           label: l10n.navScanLists,
         ),
         NavigationDestination(
+          icon: const Icon(Icons.map_outlined),
+          selectedIcon: const Icon(Icons.map),
+          label: l10n.navMap,
+        ),
+        NavigationDestination(
           icon: const Icon(Icons.settings_outlined),
           selectedIcon: const Icon(Icons.settings),
           label: l10n.navSettings,
@@ -143,6 +149,11 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
           icon: const Icon(Icons.playlist_play_outlined),
           selectedIcon: const Icon(Icons.playlist_play),
           label: Text(l10n.navScanLists),
+        ),
+        NavigationRailDestination(
+          icon: const Icon(Icons.map_outlined),
+          selectedIcon: const Icon(Icons.map),
+          label: Text(l10n.navMap),
         ),
         NavigationRailDestination(
           icon: const Icon(Icons.settings_outlined),
@@ -234,7 +245,8 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
       2 => const ZonesScreen(),
       3 => const ContactsScreen(),
       4 => const ScanListsScreen(),
-      5 => const SettingsScreen(),
+      5 => const RepeaterMapScreen(),
+      6 => const SettingsScreen(),
       _ => const DashboardScreen(),
     };
   }
@@ -390,6 +402,10 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
             setState(() => _selectedIndex = 5),
         const SingleActivator(LogicalKeyboardKey.digit6, control: true): () =>
             setState(() => _selectedIndex = 5),
+        const SingleActivator(LogicalKeyboardKey.digit7, meta: true): () =>
+            setState(() => _selectedIndex = 6),
+        const SingleActivator(LogicalKeyboardKey.digit7, control: true): () =>
+            setState(() => _selectedIndex = 6),
       },
       child: Focus(
         autofocus: true,
