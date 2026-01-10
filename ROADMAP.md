@@ -1,6 +1,6 @@
 # Roadmap Ndmr
 
-> Dernière mise à jour : 2026-01-09
+> Dernière mise à jour : 2026-01-10
 
 ## Vision
 
@@ -52,7 +52,6 @@ Créer un éditeur de codeplug DMR moderne, multiplateforme et accessible aux d�
 
 ### Idées et améliorations futures
 
-- [ ] **Feature** Base de données de relais (repeaterbook.com)
 - [ ] **Feature** Carte des relais avec géolocalisation
 - [ ] **Feature** Synchronisation cloud des codeplugs
 - [ ] **Feature** Mode hors-ligne complet sur mobile
@@ -67,8 +66,32 @@ Créer un éditeur de codeplug DMR moderne, multiplateforme et accessible aux d�
 - [x] **Feature** Import relais depuis Repeaterbook.com
 - [x] **Feature** Persistance du thème (SharedPreferences)
 - [x] **Feature** Indicateur de modifications non sauvegardées
+- [x] **Feature** Persistance de la langue (SharedPreferences)
+- [x] **Feature** Sélecteur de langue dans les réglages
+- [x] **Feature** Confirmation avant fermeture si modifications non sauvegardées
 
 ## Historique des versions
+
+### v0.11.0 - 2026-01-10
+- Persistance de la langue (SharedPreferences)
+- Sélecteur de langue dans les réglages (Système/English/Français)
+- Confirmation avant fermeture si modifications non sauvegardées
+
+### v0.10.0 - 2026-01-10
+- Persistance du thème (SharedPreferences)
+- Indicateur de modifications non sauvegardées (• dans le titre)
+- Tracking du dirty state
+
+### v0.9.0 - 2026-01-10
+- Import de relais depuis Repeaterbook.com (API)
+- Sélection par pays et filtre par ville
+- Conversion automatique en canaux DMR
+
+### v0.8.0 - 2026-01-10
+- Gestion complète des ScanLists (UI deux panneaux)
+- Canal prioritaire avec réorganisation drag & drop
+- Undo/Redo avec historique (50 max)
+- Raccourcis Cmd/Ctrl+Z, Cmd/Ctrl+Shift+Z, Cmd/Ctrl+Y
 
 ### v0.7.0 - 2026-01-09
 - Sélecteur de thème (clair/sombre/système) dans les réglages

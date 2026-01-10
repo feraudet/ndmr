@@ -51,6 +51,8 @@
   "themeSystem": "System",
   "themeLight": "Light",
   "themeDark": "Dark",
+  "settingsLanguage": "Language",
+  "languageSystem": "System",
   "statsDigitalChannels": "Digital",
   "statsAnalogChannels": "Analog",
   "statsTalkGroups": "Talk Groups",
@@ -230,5 +232,11 @@
       "count": {"type": "int"}
     }
   },
-  "repeaterbookNoConfig": "Create a configuration first"
+  "repeaterbookNoConfig": "Create a configuration first",
+
+  "unsavedChangesTitle": "Unsaved Changes",
+  "unsavedChangesMessage": "You have unsaved changes. Do you want to save before closing?",
+  "discardChanges": "Discard",
+  "saveAndClose": "Save & Close",
+  "dontClose": "Don't Close"
 }

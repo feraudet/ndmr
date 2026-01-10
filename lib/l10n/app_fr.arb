@@ -61,6 +61,8 @@
   "themeSystem": "Système",
   "themeLight": "Clair",
   "themeDark": "Sombre",
+  "settingsLanguage": "Langue",
+  "languageSystem": "Système",
   "statsDigitalChannels": "Numériques",
   "statsAnalogChannels": "Analogiques",
   "statsTalkGroups": "Talk Groups",
@@ -245,5 +247,11 @@
       "count": {"type": "int"}
     }
   },
-  "repeaterbookNoConfig": "Créez d'abord une configuration"
+  "repeaterbookNoConfig": "Créez d'abord une configuration",
+
+  "unsavedChangesTitle": "Modifications non sauvegardées",
+  "unsavedChangesMessage": "Vous avez des modifications non sauvegardées. Voulez-vous les sauvegarder avant de fermer ?",
+  "discardChanges": "Abandonner",
+  "saveAndClose": "Sauvegarder et fermer",
+  "dontClose": "Ne pas fermer"
 }

@@ -142,6 +142,12 @@ class L10nEn extends L10n {
   String get themeDark => 'Dark';
 
   @override
+  String get settingsLanguage => 'Language';
+
+  @override
+  String get languageSystem => 'System';
+
+  @override
   String get statsDigitalChannels => 'Digital';
 
   @override
@@ -546,4 +552,20 @@ class L10nEn extends L10n {
 
   @override
   String get repeaterbookNoConfig => 'Create a configuration first';
+
+  @override
+  String get unsavedChangesTitle => 'Unsaved Changes';
+
+  @override
+  String get unsavedChangesMessage =>
+      'You have unsaved changes. Do you want to save before closing?';
+
+  @override
+  String get discardChanges => 'Discard';
+
+  @override
+  String get saveAndClose => 'Save & Close';
+
+  @override
+  String get dontClose => 'Don\'t Close';
 }

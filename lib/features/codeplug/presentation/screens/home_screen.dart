@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -26,6 +28,62 @@ class HomeScreen extends ConsumerStatefulWidget {
 
 class _HomeScreenState extends ConsumerState<HomeScreen> {
   int _selectedIndex = 0;
+  late final AppLifecycleListener _lifecycleListener;
+
+  @override
+  void initState() {
+    super.initState();
+    _lifecycleListener = AppLifecycleListener(
+      onExitRequested: _handleExitRequest,
+    );
+  }
+
+  @override
+  void dispose() {
+    _lifecycleListener.dispose();
+    super.dispose();
+  }
+
+  Future<AppExitResponse> _handleExitRequest() async {
+    final hasUnsavedChanges = ref.read(hasUnsavedChangesProvider);
+    if (!hasUnsavedChanges) {
+      return AppExitResponse.exit;
+    }
+
+    final l10n = L10n.of(context)!;
+    final result = await showDialog<String>(
+      context: context,
+      barrierDismissible: false,
+      builder: (context) => AlertDialog(
+        title: Text(l10n.unsavedChangesTitle),
+        content: Text(l10n.unsavedChangesMessage),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(context, 'discard'),
+            child: Text(l10n.discardChanges),
+          ),
+          TextButton(
+            onPressed: () => Navigator.pop(context, 'cancel'),
+            child: Text(l10n.dontClose),
+          ),
+          FilledButton(
+            onPressed: () => Navigator.pop(context, 'save'),
+            child: Text(l10n.saveAndClose),
+          ),
+        ],
+      ),
+    );
+
+    switch (result) {
+      case 'save':
+        await _saveFile();
+        return AppExitResponse.exit;
+      case 'discard':
+        return AppExitResponse.exit;
+      default:
+        return AppExitResponse.cancel;
+    }
+  }
 
   List<NavigationDestination> _buildDestinations(L10n l10n) => [
         NavigationDestination(

@@ -355,6 +355,18 @@ abstract class L10n {
   /// **'Sombre'**
   String get themeDark;
 
+  /// No description provided for @settingsLanguage.
+  ///
+  /// In fr, this message translates to:
+  /// **'Langue'**
+  String get settingsLanguage;
+
+  /// No description provided for @languageSystem.
+  ///
+  /// In fr, this message translates to:
+  /// **'Système'**
+  String get languageSystem;
+
   /// No description provided for @statsDigitalChannels.
   ///
   /// In fr, this message translates to:
@@ -1092,6 +1104,36 @@ abstract class L10n {
   /// In fr, this message translates to:
   /// **'Créez d\'abord une configuration'**
   String get repeaterbookNoConfig;
+
+  /// No description provided for @unsavedChangesTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Modifications non sauvegardées'**
+  String get unsavedChangesTitle;
+
+  /// No description provided for @unsavedChangesMessage.
+  ///
+  /// In fr, this message translates to:
+  /// **'Vous avez des modifications non sauvegardées. Voulez-vous les sauvegarder avant de fermer ?'**
+  String get unsavedChangesMessage;
+
+  /// No description provided for @discardChanges.
+  ///
+  /// In fr, this message translates to:
+  /// **'Abandonner'**
+  String get discardChanges;
+
+  /// No description provided for @saveAndClose.
+  ///
+  /// In fr, this message translates to:
+  /// **'Sauvegarder et fermer'**
+  String get saveAndClose;
+
+  /// No description provided for @dontClose.
+  ///
+  /// In fr, this message translates to:
+  /// **'Ne pas fermer'**
+  String get dontClose;
 }
 
 class _L10nDelegate extends LocalizationsDelegate<L10n> {
