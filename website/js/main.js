@@ -84,34 +84,115 @@ document.addEventListener('DOMContentLoaded', () => {
                 transform: rotate(-45deg) translate(5px, -5px);
             }
         }
+        .btn-download.current-platform {
+            background: rgba(255, 255, 255, 0.3) !important;
+            border: 2px solid rgba(255, 255, 255, 0.5) !important;
+        }
     `;
     document.head.appendChild(style);
 
-    // Platform detection for download buttons
-    const detectPlatform = () => {
-        const userAgent = navigator.userAgent.toLowerCase();
-        if (userAgent.includes('win')) return 'windows';
-        if (userAgent.includes('mac')) return 'macos';
-        if (userAgent.includes('linux')) return 'linux';
-        if (userAgent.includes('android')) return 'android';
-        if (userAgent.includes('iphone') || userAgent.includes('ipad')) return 'ios';
-        return 'unknown';
-    };
-
-    // Highlight the user's platform download button
-    const platform = detectPlatform();
-    const downloadButtons = document.querySelectorAll('.btn-download');
-    downloadButtons.forEach(btn => {
-        const btnPlatform = btn.querySelector('.dl-platform').textContent.toLowerCase();
-        if (btnPlatform === platform) {
-            btn.style.background = 'rgba(255, 255, 255, 0.3)';
-            btn.style.border = '2px solid rgba(255, 255, 255, 0.5)';
-        }
-    });
+    // Initialize download buttons with direct links
+    initDownloadButtons();
 
     // Feedback form handling
     initFeedbackForm();
 });
+
+// GitHub repository info
+const GITHUB_REPO = 'feraudet/ndmr';
+const GITHUB_API_URL = `https://api.github.com/repos/${GITHUB_REPO}/releases/latest`;
+
+// Platform detection
+function detectPlatform() {
+    const userAgent = navigator.userAgent.toLowerCase();
+    if (userAgent.includes('android')) return 'android';
+    if (userAgent.includes('win')) return 'windows';
+    if (userAgent.includes('mac')) return 'macos';
+    if (userAgent.includes('linux')) return 'linux';
+    if (userAgent.includes('iphone') || userAgent.includes('ipad')) return 'ios';
+    return 'unknown';
+}
+
+// Asset filename patterns for each platform
+const PLATFORM_PATTERNS = {
+    windows: /Ndmr-.*-Windows\.zip$/i,
+    macos: /Ndmr-.*-macOS\.dmg$/i,
+    linux: /Ndmr-.*-Linux\.tar\.gz$/i,
+    android: /Ndmr-.*-Android\.apk$/i,
+    web: /Ndmr-.*-Web\.zip$/i
+};
+
+/**
+ * Initialize download buttons with direct download links
+ */
+async function initDownloadButtons() {
+    const platform = detectPlatform();
+    const downloadButtons = document.querySelectorAll('.btn-download');
+
+    // Highlight current platform button
+    downloadButtons.forEach(btn => {
+        const btnPlatform = btn.dataset.platform;
+        if (btnPlatform === platform) {
+            btn.classList.add('current-platform');
+        }
+    });
+
+    // Fetch latest release and update download URLs
+    try {
+        const response = await fetch(GITHUB_API_URL);
+        if (!response.ok) throw new Error('Failed to fetch release');
+
+        const release = await response.json();
+        const version = release.tag_name.replace(/^v/, '');
+        const assets = release.assets;
+
+        // Update version badge (text content only, safe from XSS)
+        const versionBadge = document.querySelector('.hero-badge span[data-i18n="hero.badge"]');
+        if (versionBadge) {
+            const lang = window.i18n ? window.i18n.currentLang() : 'en';
+            const versionText = {
+                fr: `Version ${version} disponible`,
+                en: `Version ${version} available`,
+                es: `Versión ${version} disponible`,
+                pt: `Versão ${version} disponível`,
+                it: `Versione ${version} disponibile`,
+                de: `Version ${version} verfügbar`,
+                uk: `Версія ${version} доступна`
+            };
+            versionBadge.textContent = versionText[lang] || versionText.en;
+        }
+
+        // Update download note version (safe: only updating a span's text content)
+        const versionSpan = document.querySelector('.download-note .version-number');
+        if (versionSpan) {
+            versionSpan.textContent = version;
+        }
+
+        // Map assets to platforms
+        const platformAssets = {};
+        assets.forEach(asset => {
+            for (const [plat, pattern] of Object.entries(PLATFORM_PATTERNS)) {
+                if (pattern.test(asset.name)) {
+                    platformAssets[plat] = asset.browser_download_url;
+                    break;
+                }
+            }
+        });
+
+        // Update download button URLs
+        downloadButtons.forEach(btn => {
+            const btnPlatform = btn.dataset.platform;
+            if (btnPlatform && platformAssets[btnPlatform]) {
+                btn.href = platformAssets[btnPlatform];
+                btn.setAttribute('download', '');
+            }
+        });
+
+    } catch (error) {
+        console.warn('Could not fetch latest release, using fallback URLs:', error);
+        // Fallback: keep existing links to releases page
+    }
+}
 
 // Feedback API endpoint (update after deploying Lambda)
 const FEEDBACK_API_URL = 'https://t3jc17asx5.execute-api.eu-west-3.amazonaws.com/feedback';
