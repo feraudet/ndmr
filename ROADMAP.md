@@ -63,7 +63,9 @@ Créer un éditeur de codeplug DMR moderne, multiplateforme et accessible aux d�
 
 - [x] **Feature** Carte des relais avec géolocalisation
 - [x] **Feature** Synchronisation cloud des codeplugs
-- [ ] **Feature** Mode hors-ligne complet sur mobile
+- [x] **Feature** Mode hors-ligne complet sur mobile
+- [x] **Feature** Écran "À propos" avec crédit F1TMV (Cyril Feraudet)
+- [ ] **Feature** Formulaire de contact/feedback (webhook Slack via API Gateway + Lambda)
 - [ ] **Feature** Thèmes personnalisables
 - [x] **Feature** Duplication de contacts/zones
 - [x] **Feature** Réorganisation des canaux par drag & drop
@@ -80,6 +82,14 @@ Créer un éditeur de codeplug DMR moderne, multiplateforme et accessible aux d�
 - [x] **Feature** Confirmation avant fermeture si modifications non sauvegardées
 
 ## Historique des versions
+
+### v0.14.0 - 2026-01-10
+- Mode hors-ligne complet sur mobile (cache SQLite + queue de synchronisation)
+- Détection automatique de la connectivité (online/offline)
+- Indicateurs visuels de sync pending dans l'écran Cloud
+- Écran "À propos" avec crédit F1TMV (Cyril Feraudet)
+- Section About sur le site web ndmr.app
+- "73 de F1TMV" comme signature
 
 ### v0.13.0 - 2026-01-10
 - Synchronisation cloud des codeplugs

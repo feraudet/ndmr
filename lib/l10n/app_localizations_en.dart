@@ -686,4 +686,45 @@ class L10nEn extends L10n {
 
   @override
   String get cloudSignInToSync => 'Sign In to Sync';
+
+  @override
+  String get cloudOfflineMode =>
+      'You\'re offline. Changes will sync when connected.';
+
+  @override
+  String get cloudSavedOffline => 'Saved locally. Will sync when online.';
+
+  @override
+  String cloudPendingSync(int count) {
+    return '$count pending';
+  }
+
+  @override
+  String get cloudPendingLabel => 'Pending sync';
+
+  @override
+  String get cloudSyncNow => 'Sync now';
+
+  @override
+  String get aboutTitle => 'About';
+
+  @override
+  String aboutVersion(String version) {
+    return 'Version $version';
+  }
+
+  @override
+  String get aboutDescription => 'A modern codeplug editor for DMR radios';
+
+  @override
+  String get aboutDeveloper => 'Developed by';
+
+  @override
+  String get aboutLicense => 'License';
+
+  @override
+  String get aboutOpenSource => 'Open Source';
+
+  @override
+  String get aboutWebsite => 'Website';
 }

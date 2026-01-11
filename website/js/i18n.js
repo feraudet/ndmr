@@ -9,10 +9,12 @@ const translations = {
         nav: {
             features: "Fonctionnalités",
             screenshots: "Aperçu",
-            download: "Télécharger"
+            download: "Télécharger",
+            about: "À propos",
+            contact: "Contact"
         },
         hero: {
-            badge: "Version 0.11.0 disponible",
+            badge: "Version 0.14.0 disponible",
             title1: "Programmez votre radio DMR",
             title2: "simplement",
             description: "Ndmr est un logiciel moderne et gratuit pour créer et éditer vos codeplugs DMR. Multiplateforme, intuitif, pensé pour les radioamateurs débutants comme experts.",
@@ -100,8 +102,35 @@ const translations = {
             versions: "Versions",
             reportBug: "Signaler un bug",
             community: "Communauté",
-            copyright: "Ndmr Project. Open-source sous licence MIT.",
+            copyright: "Open-source sous licence MIT.",
             inspired: "Inspiré par"
+        },
+        about: {
+            title: "À propos",
+            subtitle: "Le projet et son auteur",
+            developer: "Développé par",
+            description: "Radioamateur et développeur logiciel, passionné par le DMR et les technologies open-source.",
+            openSource: "Open Source",
+            license: "Ndmr est un logiciel libre publié sous licence MIT. Le code source est disponible sur GitHub.",
+            viewSource: "Voir le code source"
+        },
+        contact: {
+            title: "Contact & Feedback",
+            subtitle: "Questions, suggestions ou bugs ? Dites-nous tout !",
+            name: "Nom",
+            callsign: "Indicatif (optionnel)",
+            email: "Email",
+            type: "Type",
+            typeFeedback: "Retour général",
+            typeBug: "Rapport de bug",
+            typeFeature: "Demande de fonctionnalité",
+            typeContact: "Contact",
+            message: "Message",
+            send: "Envoyer",
+            direct: "Contact direct",
+            directDesc: "Pour les questions urgentes ou collaborations",
+            issues: "Signaler un problème",
+            issuesDesc: "Ouvrez une issue sur GitHub"
         }
     },
     en: {
@@ -110,10 +139,12 @@ const translations = {
         nav: {
             features: "Features",
             screenshots: "Preview",
-            download: "Download"
+            download: "Download",
+            about: "About",
+            contact: "Contact"
         },
         hero: {
-            badge: "Version 0.11.0 available",
+            badge: "Version 0.14.0 available",
             title1: "Program your DMR radio",
             title2: "easily",
             description: "Ndmr is a modern, free software to create and edit your DMR codeplugs. Cross-platform, intuitive, designed for beginner and expert amateur radio operators alike.",
@@ -201,8 +232,35 @@ const translations = {
             versions: "Releases",
             reportBug: "Report a bug",
             community: "Community",
-            copyright: "Ndmr Project. Open-source under MIT license.",
+            copyright: "Open-source under MIT license.",
             inspired: "Inspired by"
+        },
+        about: {
+            title: "About",
+            subtitle: "The project and its author",
+            developer: "Developed by",
+            description: "Amateur radio operator and software developer, passionate about DMR and open-source technologies.",
+            openSource: "Open Source",
+            license: "Ndmr is free software released under the MIT license. The source code is available on GitHub.",
+            viewSource: "View Source Code"
+        },
+        contact: {
+            title: "Contact & Feedback",
+            subtitle: "Questions, suggestions, or bugs? Let us know!",
+            name: "Name",
+            callsign: "Callsign (optional)",
+            email: "Email",
+            type: "Type",
+            typeFeedback: "General Feedback",
+            typeBug: "Bug Report",
+            typeFeature: "Feature Request",
+            typeContact: "Contact",
+            message: "Message",
+            send: "Send",
+            direct: "Direct Contact",
+            directDesc: "For urgent matters or collaborations",
+            issues: "Report Issues",
+            issuesDesc: "Open an issue on GitHub"
         }
     },
     es: {
@@ -211,10 +269,12 @@ const translations = {
         nav: {
             features: "Características",
             screenshots: "Vista previa",
-            download: "Descargar"
+            download: "Descargar",
+            about: "Acerca de",
+            contact: "Contacto"
         },
         hero: {
-            badge: "Versión 0.11.0 disponible",
+            badge: "Versión 0.14.0 disponible",
             title1: "Programa tu radio DMR",
             title2: "fácilmente",
             description: "Ndmr es un software moderno y gratuito para crear y editar tus codeplugs DMR. Multiplataforma, intuitivo, diseñado para radioaficionados principiantes y expertos.",
@@ -302,8 +362,35 @@ const translations = {
             versions: "Versiones",
             reportBug: "Reportar un error",
             community: "Comunidad",
-            copyright: "Ndmr Project. Código abierto bajo licencia MIT.",
+            copyright: "Código abierto bajo licencia MIT.",
             inspired: "Inspirado por"
+        },
+        about: {
+            title: "Acerca de",
+            subtitle: "El proyecto y su autor",
+            developer: "Desarrollado por",
+            description: "Radioaficionado y desarrollador de software, apasionado por el DMR y las tecnologías de código abierto.",
+            openSource: "Código Abierto",
+            license: "Ndmr es software libre publicado bajo la licencia MIT. El código fuente está disponible en GitHub.",
+            viewSource: "Ver código fuente"
+        },
+        contact: {
+            title: "Contacto y Feedback",
+            subtitle: "¿Preguntas, sugerencias o errores? ¡Cuéntanos!",
+            name: "Nombre",
+            callsign: "Indicativo (opcional)",
+            email: "Email",
+            type: "Tipo",
+            typeFeedback: "Comentario general",
+            typeBug: "Reporte de error",
+            typeFeature: "Solicitud de función",
+            typeContact: "Contacto",
+            message: "Mensaje",
+            send: "Enviar",
+            direct: "Contacto directo",
+            directDesc: "Para asuntos urgentes o colaboraciones",
+            issues: "Reportar problemas",
+            issuesDesc: "Abre una issue en GitHub"
         }
     },
     pt: {
@@ -312,10 +399,12 @@ const translations = {
         nav: {
             features: "Recursos",
             screenshots: "Prévia",
-            download: "Baixar"
+            download: "Baixar",
+            about: "Sobre",
+            contact: "Contato"
         },
         hero: {
-            badge: "Versão 0.11.0 disponível",
+            badge: "Versão 0.14.0 disponível",
             title1: "Programe seu rádio DMR",
             title2: "facilmente",
             description: "Ndmr é um software moderno e gratuito para criar e editar seus codeplugs DMR. Multiplataforma, intuitivo, projetado para radioamadores iniciantes e experientes.",
@@ -403,8 +492,35 @@ const translations = {
             versions: "Versões",
             reportBug: "Reportar um bug",
             community: "Comunidade",
-            copyright: "Ndmr Project. Código aberto sob licença MIT.",
+            copyright: "Código aberto sob licença MIT.",
             inspired: "Inspirado por"
+        },
+        about: {
+            title: "Sobre",
+            subtitle: "O projeto e seu autor",
+            developer: "Desenvolvido por",
+            description: "Radioamador e desenvolvedor de software, apaixonado por DMR e tecnologias de código aberto.",
+            openSource: "Código Aberto",
+            license: "Ndmr é software livre publicado sob a licença MIT. O código fonte está disponível no GitHub.",
+            viewSource: "Ver código fonte"
+        },
+        contact: {
+            title: "Contato e Feedback",
+            subtitle: "Dúvidas, sugestões ou bugs? Nos conte!",
+            name: "Nome",
+            callsign: "Indicativo (opcional)",
+            email: "Email",
+            type: "Tipo",
+            typeFeedback: "Feedback geral",
+            typeBug: "Relatar bug",
+            typeFeature: "Solicitar recurso",
+            typeContact: "Contato",
+            message: "Mensagem",
+            send: "Enviar",
+            direct: "Contato direto",
+            directDesc: "Para assuntos urgentes ou colaborações",
+            issues: "Relatar problemas",
+            issuesDesc: "Abra uma issue no GitHub"
         }
     },
     it: {
@@ -413,10 +529,12 @@ const translations = {
         nav: {
             features: "Funzionalità",
             screenshots: "Anteprima",
-            download: "Scarica"
+            download: "Scarica",
+            about: "Info",
+            contact: "Contatto"
         },
         hero: {
-            badge: "Versione 0.11.0 disponibile",
+            badge: "Versione 0.14.0 disponibile",
             title1: "Programma la tua radio DMR",
             title2: "facilmente",
             description: "Ndmr è un software moderno e gratuito per creare e modificare i tuoi codeplug DMR. Multipiattaforma, intuitivo, progettato per radioamatori principianti ed esperti.",
@@ -504,8 +622,35 @@ const translations = {
             versions: "Versioni",
             reportBug: "Segnala un bug",
             community: "Comunità",
-            copyright: "Ndmr Project. Open-source sotto licenza MIT.",
+            copyright: "Open-source sotto licenza MIT.",
             inspired: "Ispirato da"
+        },
+        about: {
+            title: "Info",
+            subtitle: "Il progetto e il suo autore",
+            developer: "Sviluppato da",
+            description: "Radioamatore e sviluppatore software, appassionato di DMR e tecnologie open-source.",
+            openSource: "Open Source",
+            license: "Ndmr è software libero rilasciato sotto licenza MIT. Il codice sorgente è disponibile su GitHub.",
+            viewSource: "Vedi codice sorgente"
+        },
+        contact: {
+            title: "Contatto e Feedback",
+            subtitle: "Domande, suggerimenti o bug? Facci sapere!",
+            name: "Nome",
+            callsign: "Nominativo (opzionale)",
+            email: "Email",
+            type: "Tipo",
+            typeFeedback: "Feedback generale",
+            typeBug: "Segnalazione bug",
+            typeFeature: "Richiesta funzionalità",
+            typeContact: "Contatto",
+            message: "Messaggio",
+            send: "Invia",
+            direct: "Contatto diretto",
+            directDesc: "Per questioni urgenti o collaborazioni",
+            issues: "Segnala problemi",
+            issuesDesc: "Apri una issue su GitHub"
         }
     },
     de: {
@@ -514,10 +659,12 @@ const translations = {
         nav: {
             features: "Funktionen",
             screenshots: "Vorschau",
-            download: "Herunterladen"
+            download: "Herunterladen",
+            about: "Über",
+            contact: "Kontakt"
         },
         hero: {
-            badge: "Version 0.11.0 verfügbar",
+            badge: "Version 0.14.0 verfügbar",
             title1: "Programmieren Sie Ihr DMR-Funkgerät",
             title2: "einfach",
             description: "Ndmr ist eine moderne, kostenlose Software zum Erstellen und Bearbeiten Ihrer DMR-Codeplugs. Plattformübergreifend, intuitiv, für Anfänger und erfahrene Funkamateure konzipiert.",
@@ -605,8 +752,35 @@ const translations = {
             versions: "Versionen",
             reportBug: "Fehler melden",
             community: "Community",
-            copyright: "Ndmr Project. Open-Source unter MIT-Lizenz.",
+            copyright: "Open-Source unter MIT-Lizenz.",
             inspired: "Inspiriert von"
+        },
+        about: {
+            title: "Über",
+            subtitle: "Das Projekt und sein Autor",
+            developer: "Entwickelt von",
+            description: "Funkamateur und Softwareentwickler, begeistert von DMR und Open-Source-Technologien.",
+            openSource: "Open Source",
+            license: "Ndmr ist freie Software unter der MIT-Lizenz. Der Quellcode ist auf GitHub verfügbar.",
+            viewSource: "Quellcode ansehen"
+        },
+        contact: {
+            title: "Kontakt & Feedback",
+            subtitle: "Fragen, Vorschläge oder Fehler? Lassen Sie es uns wissen!",
+            name: "Name",
+            callsign: "Rufzeichen (optional)",
+            email: "E-Mail",
+            type: "Typ",
+            typeFeedback: "Allgemeines Feedback",
+            typeBug: "Fehlerbericht",
+            typeFeature: "Funktionsanfrage",
+            typeContact: "Kontakt",
+            message: "Nachricht",
+            send: "Senden",
+            direct: "Direkter Kontakt",
+            directDesc: "Für dringende Angelegenheiten oder Zusammenarbeit",
+            issues: "Probleme melden",
+            issuesDesc: "Öffnen Sie ein Issue auf GitHub"
         }
     },
     uk: {
@@ -615,10 +789,12 @@ const translations = {
         nav: {
             features: "Функції",
             screenshots: "Попередній перегляд",
-            download: "Завантажити"
+            download: "Завантажити",
+            about: "Про нас",
+            contact: "Контакт"
         },
         hero: {
-            badge: "Версія 0.11.0 доступна",
+            badge: "Версія 0.14.0 доступна",
             title1: "Програмуйте свою DMR радіо",
             title2: "просто",
             description: "Ndmr — це сучасне безкоштовне програмне забезпечення для створення та редагування ваших DMR кодеплагів. Кросплатформне, інтуїтивне, розроблене для початківців і досвідчених радіоаматорів.",
@@ -706,8 +882,35 @@ const translations = {
             versions: "Версії",
             reportBug: "Повідомити про помилку",
             community: "Спільнота",
-            copyright: "Ndmr Project. Відкритий код під ліцензією MIT.",
+            copyright: "Відкритий код під ліцензією MIT.",
             inspired: "Натхненний"
+        },
+        about: {
+            title: "Про нас",
+            subtitle: "Проект та його автор",
+            developer: "Розроблено",
+            description: "Радіоаматор та розробник програмного забезпечення, захоплений DMR та технологіями з відкритим кодом.",
+            openSource: "Відкритий код",
+            license: "Ndmr — це вільне програмне забезпечення під ліцензією MIT. Вихідний код доступний на GitHub.",
+            viewSource: "Переглянути вихідний код"
+        },
+        contact: {
+            title: "Контакт і Відгук",
+            subtitle: "Питання, пропозиції або помилки? Повідомте нас!",
+            name: "Ім'я",
+            callsign: "Позивний (необов'язково)",
+            email: "Електронна пошта",
+            type: "Тип",
+            typeFeedback: "Загальний відгук",
+            typeBug: "Звіт про помилку",
+            typeFeature: "Запит на функцію",
+            typeContact: "Контакт",
+            message: "Повідомлення",
+            send: "Надіслати",
+            direct: "Прямий контакт",
+            directDesc: "Для термінових питань або співпраці",
+            issues: "Повідомити про проблеми",
+            issuesDesc: "Відкрийте issue на GitHub"
         }
     }
 };

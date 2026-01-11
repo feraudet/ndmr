@@ -311,5 +311,28 @@
     }
   },
   "cloudNotLoggedIn": "Connectez-vous pour synchroniser vos codeplugs",
-  "cloudSignInToSync": "Se connecter pour synchroniser"
+  "cloudSignInToSync": "Se connecter pour synchroniser",
+  "cloudOfflineMode": "Vous êtes hors ligne. Les modifications seront synchronisées à la reconnexion.",
+  "cloudSavedOffline": "Enregistré localement. Synchronisation à la reconnexion.",
+  "cloudPendingSync": "{count} en attente",
+  "@cloudPendingSync": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+  "cloudPendingLabel": "En attente de sync",
+  "cloudSyncNow": "Synchroniser",
+
+  "aboutTitle": "À propos",
+  "aboutVersion": "Version {version}",
+  "@aboutVersion": {
+    "placeholders": {
+      "version": {"type": "String"}
+    }
+  },
+  "aboutDescription": "Un éditeur de codeplug moderne pour radios DMR",
+  "aboutDeveloper": "Développé par",
+  "aboutLicense": "Licence",
+  "aboutOpenSource": "Open Source",
+  "aboutWebsite": "Site web"
 }

@@ -108,4 +108,147 @@ document.addEventListener('DOMContentLoaded', () => {
             btn.style.border = '2px solid rgba(255, 255, 255, 0.5)';
         }
     });
+
+    // Feedback form handling
+    initFeedbackForm();
 });
+
+// Feedback API endpoint (update after deploying Lambda)
+const FEEDBACK_API_URL = 'https://t3jc17asx5.execute-api.eu-west-3.amazonaws.com/feedback';
+
+/**
+ * Initialize feedback form
+ */
+function initFeedbackForm() {
+    const form = document.getElementById('feedback-form');
+    if (!form) return;
+
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        await submitFeedback(form);
+    });
+}
+
+/**
+ * Submit feedback to API
+ */
+async function submitFeedback(form) {
+    const submitBtn = document.getElementById('submit-btn');
+    const sendIcon = submitBtn.querySelector('.send-icon');
+    const loadingIcon = submitBtn.querySelector('.loading-icon');
+    const statusDiv = document.getElementById('form-status');
+
+    // Get form data
+    const formData = {
+        name: form.querySelector('#feedback-name').value.trim(),
+        callsign: form.querySelector('#feedback-callsign').value.trim(),
+        email: form.querySelector('#feedback-email').value.trim(),
+        type: form.querySelector('#feedback-type').value,
+        message: form.querySelector('#feedback-message').value.trim(),
+        source: 'website'
+    };
+
+    // Validate
+    if (!formData.name || !formData.email || !formData.message) {
+        showStatus(statusDiv, 'error', getStatusMessage('error', 'required'));
+        return;
+    }
+
+    // Show loading state
+    submitBtn.disabled = true;
+    sendIcon.style.display = 'none';
+    loadingIcon.style.display = 'inline';
+    statusDiv.className = 'form-status';
+    statusDiv.style.display = 'none';
+
+    try {
+        const response = await fetch(FEEDBACK_API_URL, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(formData)
+        });
+
+        const result = await response.json();
+
+        if (response.ok && result.success) {
+            showStatus(statusDiv, 'success', getStatusMessage('success'));
+            form.reset();
+        } else {
+            showStatus(statusDiv, 'error', getStatusMessage('error', 'server'));
+        }
+    } catch (error) {
+        console.error('Feedback error:', error);
+        showStatus(statusDiv, 'error', getStatusMessage('error', 'network'));
+    } finally {
+        // Reset button state
+        submitBtn.disabled = false;
+        sendIcon.style.display = 'inline';
+        loadingIcon.style.display = 'none';
+    }
+}
+
+/**
+ * Show status message
+ */
+function showStatus(statusDiv, type, message) {
+    statusDiv.textContent = message;
+    statusDiv.className = `form-status ${type}`;
+}
+
+/**
+ * Get localized status message
+ */
+function getStatusMessage(type, subtype) {
+    const messages = {
+        success: {
+            fr: 'Message envoyé avec succès ! Merci pour votre retour.',
+            en: 'Message sent successfully! Thank you for your feedback.',
+            es: '¡Mensaje enviado con éxito! Gracias por tu comentario.',
+            pt: 'Mensagem enviada com sucesso! Obrigado pelo seu feedback.',
+            it: 'Messaggio inviato con successo! Grazie per il tuo feedback.',
+            de: 'Nachricht erfolgreich gesendet! Vielen Dank für Ihr Feedback.',
+            uk: 'Повідомлення успішно надіслано! Дякуємо за ваш відгук.'
+        },
+        error: {
+            required: {
+                fr: 'Veuillez remplir tous les champs obligatoires.',
+                en: 'Please fill in all required fields.',
+                es: 'Por favor, complete todos los campos obligatorios.',
+                pt: 'Por favor, preencha todos os campos obrigatórios.',
+                it: 'Si prega di compilare tutti i campi obbligatori.',
+                de: 'Bitte füllen Sie alle erforderlichen Felder aus.',
+                uk: 'Будь ласка, заповніть усі обов\'язкові поля.'
+            },
+            network: {
+                fr: 'Erreur réseau. Veuillez réessayer.',
+                en: 'Network error. Please try again.',
+                es: 'Error de red. Por favor, inténtelo de nuevo.',
+                pt: 'Erro de rede. Por favor, tente novamente.',
+                it: 'Errore di rete. Si prega di riprovare.',
+                de: 'Netzwerkfehler. Bitte versuchen Sie es erneut.',
+                uk: 'Помилка мережі. Будь ласка, спробуйте ще раз.'
+            },
+            server: {
+                fr: 'Erreur serveur. Veuillez réessayer plus tard.',
+                en: 'Server error. Please try again later.',
+                es: 'Error del servidor. Por favor, inténtelo más tarde.',
+                pt: 'Erro do servidor. Por favor, tente novamente mais tarde.',
+                it: 'Errore del server. Si prega di riprovare più tardi.',
+                de: 'Serverfehler. Bitte versuchen Sie es später erneut.',
+                uk: 'Помилка сервера. Будь ласка, спробуйте пізніше.'
+            }
+        }
+    };
+
+    const lang = window.i18n ? window.i18n.currentLang() : 'en';
+
+    if (type === 'success') {
+        return messages.success[lang] || messages.success.en;
+    } else if (type === 'error' && subtype) {
+        return messages.error[subtype][lang] || messages.error[subtype].en;
+    }
+
+    return 'An error occurred.';
+}

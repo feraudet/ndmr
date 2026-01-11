@@ -7,6 +7,7 @@ import '../../../../l10n/app_localizations.dart';
 import '../../../../shared/widgets/help_tooltip.dart';
 import '../../data/models/models.dart';
 import '../providers/codeplug_provider.dart';
+import 'about_screen.dart';
 
 class SettingsScreen extends ConsumerStatefulWidget {
   const SettingsScreen({super.key});
@@ -195,6 +196,20 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
             onPressed: () => _saveSettings(l10n),
             icon: const Icon(Icons.save),
             label: Text(l10n.save),
+          ),
+          const SizedBox(height: 32),
+          const Divider(),
+          const SizedBox(height: 16),
+          ListTile(
+            leading: const Icon(Icons.info_outline),
+            title: Text(l10n.aboutTitle),
+            trailing: const Icon(Icons.chevron_right),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (_) => const AboutScreen()),
+              );
+            },
           ),
         ],
       ),

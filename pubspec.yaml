@@ -56,6 +56,10 @@ dependencies:
   # Secure storage for tokens
   flutter_secure_storage: ^9.2.0
 
+  # Offline support
+  connectivity_plus: ^6.0.0
+  sqflite: ^2.3.0
+
   # Map for repeater visualization
   flutter_map: ^7.0.0
   latlong2: ^0.9.0

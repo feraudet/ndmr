@@ -296,5 +296,28 @@
     }
   },
   "cloudNotLoggedIn": "Sign in to sync your codeplugs",
-  "cloudSignInToSync": "Sign In to Sync"
+  "cloudSignInToSync": "Sign In to Sync",
+  "cloudOfflineMode": "You're offline. Changes will sync when connected.",
+  "cloudSavedOffline": "Saved locally. Will sync when online.",
+  "cloudPendingSync": "{count} pending",
+  "@cloudPendingSync": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+  "cloudPendingLabel": "Pending sync",
+  "cloudSyncNow": "Sync now",
+
+  "aboutTitle": "About",
+  "aboutVersion": "Version {version}",
+  "@aboutVersion": {
+    "placeholders": {
+      "version": {"type": "String"}
+    }
+  },
+  "aboutDescription": "A modern codeplug editor for DMR radios",
+  "aboutDeveloper": "Developed by",
+  "aboutLicense": "License",
+  "aboutOpenSource": "Open Source",
+  "aboutWebsite": "Website"
 }

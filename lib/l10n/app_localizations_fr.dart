@@ -695,4 +695,47 @@ class L10nFr extends L10n {
 
   @override
   String get cloudSignInToSync => 'Se connecter pour synchroniser';
+
+  @override
+  String get cloudOfflineMode =>
+      'Vous êtes hors ligne. Les modifications seront synchronisées à la reconnexion.';
+
+  @override
+  String get cloudSavedOffline =>
+      'Enregistré localement. Synchronisation à la reconnexion.';
+
+  @override
+  String cloudPendingSync(int count) {
+    return '$count en attente';
+  }
+
+  @override
+  String get cloudPendingLabel => 'En attente de sync';
+
+  @override
+  String get cloudSyncNow => 'Synchroniser';
+
+  @override
+  String get aboutTitle => 'À propos';
+
+  @override
+  String aboutVersion(String version) {
+    return 'Version $version';
+  }
+
+  @override
+  String get aboutDescription =>
+      'Un éditeur de codeplug moderne pour radios DMR';
+
+  @override
+  String get aboutDeveloper => 'Développé par';
+
+  @override
+  String get aboutLicense => 'Licence';
+
+  @override
+  String get aboutOpenSource => 'Open Source';
+
+  @override
+  String get aboutWebsite => 'Site web';
 }

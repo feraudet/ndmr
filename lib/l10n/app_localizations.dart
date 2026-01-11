@@ -1350,6 +1350,78 @@ abstract class L10n {
   /// In fr, this message translates to:
   /// **'Se connecter pour synchroniser'**
   String get cloudSignInToSync;
+
+  /// No description provided for @cloudOfflineMode.
+  ///
+  /// In fr, this message translates to:
+  /// **'Vous êtes hors ligne. Les modifications seront synchronisées à la reconnexion.'**
+  String get cloudOfflineMode;
+
+  /// No description provided for @cloudSavedOffline.
+  ///
+  /// In fr, this message translates to:
+  /// **'Enregistré localement. Synchronisation à la reconnexion.'**
+  String get cloudSavedOffline;
+
+  /// No description provided for @cloudPendingSync.
+  ///
+  /// In fr, this message translates to:
+  /// **'{count} en attente'**
+  String cloudPendingSync(int count);
+
+  /// No description provided for @cloudPendingLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'En attente de sync'**
+  String get cloudPendingLabel;
+
+  /// No description provided for @cloudSyncNow.
+  ///
+  /// In fr, this message translates to:
+  /// **'Synchroniser'**
+  String get cloudSyncNow;
+
+  /// No description provided for @aboutTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'À propos'**
+  String get aboutTitle;
+
+  /// No description provided for @aboutVersion.
+  ///
+  /// In fr, this message translates to:
+  /// **'Version {version}'**
+  String aboutVersion(String version);
+
+  /// No description provided for @aboutDescription.
+  ///
+  /// In fr, this message translates to:
+  /// **'Un éditeur de codeplug moderne pour radios DMR'**
+  String get aboutDescription;
+
+  /// No description provided for @aboutDeveloper.
+  ///
+  /// In fr, this message translates to:
+  /// **'Développé par'**
+  String get aboutDeveloper;
+
+  /// No description provided for @aboutLicense.
+  ///
+  /// In fr, this message translates to:
+  /// **'Licence'**
+  String get aboutLicense;
+
+  /// No description provided for @aboutOpenSource.
+  ///
+  /// In fr, this message translates to:
+  /// **'Open Source'**
+  String get aboutOpenSource;
+
+  /// No description provided for @aboutWebsite.
+  ///
+  /// In fr, this message translates to:
+  /// **'Site web'**
+  String get aboutWebsite;
 }
 
 class _L10nDelegate extends LocalizationsDelegate<L10n> {
