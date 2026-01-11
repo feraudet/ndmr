@@ -1,7 +1,7 @@
 name: ndmr
 description: "Native DMR - A modern codeplug editor for DMR radios"
 publish_to: 'none'
-version: 0.1.0+1
+version: 0.14.0+1
 
 environment:
   sdk: ^3.10.4
