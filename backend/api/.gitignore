@@ -1,0 +1,9 @@
+# Terraform/OpenTofu
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfvars
+.terraform.lock.hcl
+
+# Lambda zip files
+lambda/*.zip

@@ -1,0 +1,7 @@
+aws_region  = "eu-west-3"
+aws_profile = "your-aws-profile"
+environment = "prod"
+domain_name = "api.ndmr.app"
+
+# Generate a secure secret: openssl rand -base64 32
+jwt_secret = "your-jwt-secret-here"
